@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ferrys</string>
+
+    <string-array name="items">
+        <item>Donsak</item>
+        <item>Samui</item>
+        <item>Phangan</item>
+        <item>Tao</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ferrys</string>
+
+    <string-array name="islands">
+        <item>Koh Samui</item>
+        <item>Koh Phangan</item>
+        <item>Don Sak</item>
+        <item>Koh Tao</item>
+    </string-array>
+
+</resources>
