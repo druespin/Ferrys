@@ -28,11 +28,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        search = (Button) findViewById(R.id.search);
-        tv3 = (TextView) findViewById(R.id.textView3);
+        search = findViewById(R.id.search);
+        tv3 = findViewById(R.id.textView3);
     }
 
-    public void clickSearch(View v) throws IOException {
+    public void clickSearch(View v) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://rawgit.com/startandroid/com.akostikov.datab.data/master/messages/")
