@@ -2,10 +2,11 @@
     <string name="app_name">Ferrys</string>
 
     <string-array name="items">
-        <item>Donsak</item>
+        <item>-Select-</item>
+        <item>Don_Sak</item>
         <item>Samui</item>
         <item>Phangan</item>
-        <item>Tao</item>
+        <item>Koh_Tao</item>
     </string-array>
 
 </resources>

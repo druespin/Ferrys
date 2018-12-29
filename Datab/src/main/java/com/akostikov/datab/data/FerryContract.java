@@ -4,21 +4,21 @@ import android.provider.BaseColumns;
 
 public class FerryContract implements BaseColumns  {
 
-    public final String _ID = BaseColumns._ID;
-    public final String COLUMN_BOAT = "Boat";
-    public final String COLUMN_DEPARTURE = "Departure";
-    public final String COLUMN_ARRIVAL = "Arrival";
-    public final String COLUMN_TRAVEL_TIME = "Travel_time";
-    public final String COLUMN_PRICE = "Price";
+    private String tableName;
 
-    private String table_name;
-
-    public FerryContract(String dprt, String arrv) {
-        this.table_name = dprt + "_to_" + arrv;
+    public FerryContract(String departure, String arrival) {
+        this.tableName = departure + "_" + arrival;
     }
 
-    public String getTable_name() {
-        return table_name;
+    protected final String COLUMN_BOAT = "Boat";
+    protected final String COLUMN_DEPARTURE = "Departure";
+    protected final String COLUMN_ARRIVAL = "Arrival";
+    protected final String COLUMN_TRAVEL_TIME = "Travel_Time";
+    protected final String COLUMN_PRICE = "Price";
+
+
+    public String getTableName() {
+        return tableName;
     }
 
     public String[] getColumns()    {
@@ -30,14 +30,14 @@ public class FerryContract implements BaseColumns  {
                             this.COLUMN_PRICE};
     }
 
-    String createTable()    {
+    public String createTable() {
 
-        return "CREATE TABLE " + this.getTable_name() + "( "
+        return "CREATE TABLE " + this.getTableName() + "("
                 + this._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + this.COLUMN_BOAT + " TEXT NOT NULL, "
-                + this.COLUMN_DEPARTURE + " TEXT NOT NULL, "
-                + this.COLUMN_ARRIVAL + " TEXT NOT NULL, "
-                + this.COLUMN_TRAVEL_TIME + " TEXT NOT NULL, "
-                + this.COLUMN_PRICE + " TEXT NOT NULL)";
+                + this.COLUMN_BOAT + " TEXT, "
+                + this.COLUMN_DEPARTURE + " TEXT, "
+                + this.COLUMN_ARRIVAL + " TEXT, "
+                + this.COLUMN_TRAVEL_TIME + " TEXT, "
+                + this.COLUMN_PRICE + " TEXT);";
     }
 }
