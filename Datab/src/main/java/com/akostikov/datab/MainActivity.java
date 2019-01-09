@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
     Spinner spin1, spin2;
     Button btnSearch;
-    ListView list;
+    ListView listView;
 
     final ArrayList<ListItem> tableItems = new ArrayList<>();
 
@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         spin2 = findViewById(R.id.spinner2);
         btnSearch = findViewById(R.id.search);
 
-        final ListView listView = findViewById(R.id.list);
+        listView = findViewById(R.id.list);
 
         final FerryDBHelper dbHelper = new FerryDBHelper(getApplicationContext());
 
@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 
                     // Fill the adapter
                     ListItemAdapter listAdapter = new ListItemAdapter(MainActivity.this,
-                            android.R.layout.simple_list_item_1, tableItems);
+                            R.layout.list_item, tableItems);
 
                     listView.setAdapter(listAdapter);
 

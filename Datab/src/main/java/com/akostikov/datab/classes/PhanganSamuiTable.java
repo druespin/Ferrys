@@ -41,7 +41,7 @@ public class PhanganSamuiTable extends FerryContract {
             cv.put(this.COLUMN_BOAT, SCHEDULE[i][0]);
             cv.put(this.COLUMN_DEPARTURE, SCHEDULE[i][1]);
             cv.put(this.COLUMN_ARRIVAL, SCHEDULE[i][2]);
-            cv.put(this.COLUMN_TRAVEL_TIME, SCHEDULE[i][3]);
+            cv.put(this.COLUMN_PIER, SCHEDULE[i][3]);
             cv.put(this.COLUMN_PRICE, SCHEDULE[i][4]);
 
             db.insert(this.getTableName(),null, cv);

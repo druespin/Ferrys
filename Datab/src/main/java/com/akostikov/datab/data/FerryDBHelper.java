@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.akostikov.datab.ListItem;
+import com.akostikov.datab.R;
 import com.akostikov.datab.classes.DonSakKohTaoTable;
 import com.akostikov.datab.classes.DonSakPhanganTable;
 import com.akostikov.datab.classes.DonSakSamuiTable;
@@ -161,20 +162,20 @@ public class FerryDBHelper extends SQLiteOpenHelper {
 
                 do {
                     String boat = cursor.getString(1);
-                    String depart = cursor.getString(2);
-                    String arrive = cursor.getString(3);
-                    String travelTime = cursor.getString(4);
+                    String pier = cursor.getString(2);
+                    String depart = cursor.getString(3);
+                    String arrive = cursor.getString(4);
                     String price = cursor.getString(5);
 
                     switch (boat)   {
-                        case "Raja": boatLogo = 1; break;
-                        case "Lomprayah": boatLogo = 2; break;
-                        case "Seatran": boatLogo = 3; break;
-                        case "Songserm": boatLogo = 4; break;
-                        case "Haadrin Queen": boatLogo = 5; break;
+                        case "Raja": boatLogo = R.drawable.raja; break;
+                        case "Lomprayah": boatLogo = R.drawable.lomprayah; break;
+                        case "Seatran": boatLogo = R.drawable.seatran; break;
+                        case "Songserm": boatLogo = R.drawable.songserm; break;
+                        case "Haadrin Queen": boatLogo = R.drawable.haadrin_queen; break;
                     }
 
-                    tableItems.add(new ListItem(boatLogo, boat, depart, arrive, travelTime, price));
+                    tableItems.add(new ListItem(boatLogo, boat, depart, arrive, price));
                 }
                 while (cursor.moveToNext());
             } else Log.d("MYLOG", "Table is empty");

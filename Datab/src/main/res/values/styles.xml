@@ -5,4 +5,25 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">#670</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="ListTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">#65a</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Ferrys" parent="android:Theme.Holo.Light.NoActionBar" >
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/background_holo_light</item>
+    </style>
+
 </resources>

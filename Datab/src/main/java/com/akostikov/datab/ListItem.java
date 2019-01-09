@@ -5,15 +5,15 @@ import java.util.List;
 public class ListItem {
 
     int boatLogo;
-    String boat, depart, arrive, time, price;
+    String pier, depart, arrive, price;
 
-    public ListItem(int boatLogo, String boat, String depart, String arrive, String time, String price)  {
+    public ListItem(int boatLogo, String pier, String depart, String arrive, String price)  {
 
         this.boatLogo = boatLogo;
-        this.boat = boat;
+       // this.boat = boat;
+        this.pier = pier;
         this.depart = depart;
         this.arrive = arrive;
-        this.time = time;
         this.price = price;
     }
 
@@ -21,9 +21,7 @@ public class ListItem {
         return boatLogo;
     }
 
-    public String getBoat() {
-        return boat;
-    }
+    // public String getBoat() {return boat; }
 
     public String getDepart() {
         return depart;
@@ -33,8 +31,8 @@ public class ListItem {
         return arrive;
     }
 
-    public String getTime() {
-        return time;
+    public String getPier() {
+        return pier;
     }
 
     public String getPrice() {
