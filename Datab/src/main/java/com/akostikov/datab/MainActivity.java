@@ -33,10 +33,16 @@ public class MainActivity extends Activity {
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
         btnSearch = findViewById(R.id.search);
-
         listView = findViewById(R.id.list);
 
+        // Initialize DB
         final FerryDBHelper dbHelper = new FerryDBHelper(getApplicationContext());
+
+        // Fill list adapter
+        final ListItemAdapter listAdapter = new ListItemAdapter(MainActivity.this,
+                R.layout.list_item, tableItems);
+
+        listView.setAdapter(listAdapter);
 
         // Invoke method to get departure and arrival from spinners
         setupSpinner();
@@ -58,16 +64,13 @@ public class MainActivity extends Activity {
 
                 if (!departure.equals("-Select-") && !arrival.equals("-Select-"))     {
 
+                    listAdapter.clear();
+
                     // Get data from DB
                     dbHelper.getWritableDatabase();
 
                     dbHelper.showInfo(departure, arrival, tableItems);
 
-                    // Fill the adapter
-                    ListItemAdapter listAdapter = new ListItemAdapter(MainActivity.this,
-                            R.layout.list_item, tableItems);
-
-                    listView.setAdapter(listAdapter);
 
                     listAdapter.notifyDataSetChanged();
                 }
