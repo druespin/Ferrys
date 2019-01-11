@@ -9,18 +9,18 @@ import android.util.Log;
 
 import com.akostikov.datab.ListItem;
 import com.akostikov.datab.R;
-import com.akostikov.datab.classes.DonSakKohTaoTable;
-import com.akostikov.datab.classes.DonSakPhanganTable;
-import com.akostikov.datab.classes.DonSakSamuiTable;
-import com.akostikov.datab.classes.KohTaoDonSakTable;
-import com.akostikov.datab.classes.PhanganDonSakTable;
-import com.akostikov.datab.classes.PhanganSamuiTable;
-import com.akostikov.datab.classes.PhanganTaoTable;
-import com.akostikov.datab.classes.SamuiDonSakTable;
-import com.akostikov.datab.classes.SamuiTaoTable;
-import com.akostikov.datab.classes.SamuiPhanganTable;
-import com.akostikov.datab.classes.TaoPhanganTable;
-import com.akostikov.datab.classes.TaoSamuiTable;
+import com.akostikov.datab.tables.DonSakKohTaoTable;
+import com.akostikov.datab.tables.DonSakPhanganTable;
+import com.akostikov.datab.tables.DonSakSamuiTable;
+import com.akostikov.datab.tables.KohTaoDonSakTable;
+import com.akostikov.datab.tables.PhanganDonSakTable;
+import com.akostikov.datab.tables.PhanganSamuiTable;
+import com.akostikov.datab.tables.PhanganTaoTable;
+import com.akostikov.datab.tables.SamuiDonSakTable;
+import com.akostikov.datab.tables.SamuiTaoTable;
+import com.akostikov.datab.tables.SamuiPhanganTable;
+import com.akostikov.datab.tables.TaoPhanganTable;
+import com.akostikov.datab.tables.TaoSamuiTable;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
     private PhanganTaoTable phanganTao = new PhanganTaoTable();
 
     public FerryDBHelper(Context context)  {
-        super(context, DATABASE_NAME, null, 3);
+        super(context, DATABASE_NAME, null, 4);
     }
 
     @Override
@@ -162,10 +162,11 @@ public class FerryDBHelper extends SQLiteOpenHelper {
 
                 do {
                     String boat = cursor.getString(1);
-                    String pier = cursor.getString(2);
-                    String depart = cursor.getString(3);
-                    String arrive = cursor.getString(4);
-                    String price = cursor.getString(5);
+                    String timeDepart = cursor.getString(2);
+                    String pierDepart = cursor.getString(3);
+                    String timeArrive = cursor.getString(4);
+                    String pierArrive = cursor.getString(5);
+                    String price = cursor.getString(6);
 
                     switch (boat)   {
                         case "Raja": boatLogo = R.drawable.raja; break;
@@ -175,7 +176,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
                         case "Haadrin Queen": boatLogo = R.drawable.haadrin_queen; break;
                     }
 
-                    tableItems.add(new ListItem(boatLogo, boat, depart, arrive, price));
+                    tableItems.add(new ListItem(boatLogo, timeDepart, pierDepart, timeArrive, pierArrive, price));
                 }
                 while (cursor.moveToNext());
             } else Log.d("MYLOG", "Table is empty");

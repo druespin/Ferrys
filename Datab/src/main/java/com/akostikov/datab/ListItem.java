@@ -1,40 +1,33 @@
 package com.akostikov.datab;
 
-import java.util.List;
 
 public class ListItem {
 
     int boatLogo;
-    String pier, depart, arrive, price;
+    String pierDepart, pierArrive, timeDepart, timeArrive, price;
 
-    public ListItem(int boatLogo, String pier, String depart, String arrive, String price)  {
+    public ListItem(int boatLogo, String timeDepart, String pierDepart, String timeArrive,
+                    String pierArrive, String price)  {
 
         this.boatLogo = boatLogo;
-       // this.boat = boat;
-        this.pier = pier;
-        this.depart = depart;
-        this.arrive = arrive;
+        this.timeDepart = timeDepart;
+        this.timeArrive = timeArrive;
+        this.pierArrive = pierArrive;
+        this.pierDepart = pierDepart;
         this.price = price;
     }
 
     public int getBoatLogo() {
         return boatLogo;
     }
-
-    // public String getBoat() {return boat; }
-
-    public String getDepart() {
-        return depart;
+    public String getTimeDepart() { return timeDepart; }
+    public String getPierDepart() {return pierDepart; }
+    public String getTimeArrive() {
+        return timeArrive;
     }
-
-    public String getArrive() {
-        return arrive;
+    public String getPierArrive() {
+        return pierArrive;
     }
-
-    public String getPier() {
-        return pier;
-    }
-
     public String getPrice() {
         return price;
     }

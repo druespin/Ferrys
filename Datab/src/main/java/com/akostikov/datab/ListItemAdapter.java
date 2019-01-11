@@ -39,34 +39,36 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
         }
 
         ImageView boatLogo = convertView.findViewById(R.id.boatLogo);
-        TextView pier = convertView.findViewById(R.id.pier);
-        TextView depart = convertView.findViewById(R.id.depart);
-        TextView arrive = convertView.findViewById(R.id.arrive);
+        TextView timeDepart = convertView.findViewById(R.id.timeDepart);
+        TextView timeArrive = convertView.findViewById(R.id.timeArrive);
+        TextView pierDepart = convertView.findViewById(R.id.pierDepart);
+        TextView pierArrive = convertView.findViewById(R.id.pierArrive);
         TextView price = convertView.findViewById(R.id.price);
 
         ListItem item = items.get(position);
 
         boatLogo.setImageResource(item.getBoatLogo());
-        pier.setText(item.getPier());
-        depart.setText(item.getDepart());
-        arrive.setText(item.getArrive());
-        price.setText(item.getPrice());
+        timeDepart.setText(item.getTimeDepart());
+        timeArrive.setText(item.getTimeArrive());
+        pierDepart.setText(item.getPierDepart());
+        pierArrive.setText(item.getPierArrive());
+        price.setText("Price : " + item.getPrice());
 
         return convertView;
     }
 
     private class ViewHolder {
         final ImageView boatLogo;
-        final TextView pier, depart, arrive, price;
+        final TextView timeDepart, timeArrive, pierDepart, pierArrive, price;
 
         ViewHolder(View view)   {
 
             boatLogo = view.findViewById(R.id.boatLogo);
-            pier =  view.findViewById(R.id.pier);
-            depart = view.findViewById(R.id.depart);
-            arrive = view.findViewById(R.id.arrive);
+            timeDepart = view.findViewById(R.id.timeDepart);
+            timeArrive = view.findViewById(R.id.timeArrive);
+            pierDepart =  view.findViewById(R.id.pierDepart);
+            pierArrive = view.findViewById(R.id.pierArrive);
             price = view.findViewById(R.id.price);
-
         }
     }
 }

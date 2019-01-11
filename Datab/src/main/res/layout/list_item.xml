@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <ImageView
         android:id="@+id/boatLogo"
@@ -10,7 +11,7 @@
         android:layout_height="100dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
@@ -22,32 +23,47 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/depart"
-                android:layout_width="wrap_content"
+                android:id="@+id/timeDepart"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                style="@style/ListTextStyle"/>
+                style="@style/TimeStyle"/>
 
             <TextView
-                android:id="@+id/arrive"
+                android:id="@+id/pierDepart"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/ListTextStyle"/>
+                android:layout_height="match_parent"
+                style="@style/PierStyle" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/pier"
-            style="@style/ListTextStyle"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/price"
+        <LinearLayout
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ListTextStyle"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timeArrive"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+
+                style="@style/TimeStyle"/>
+
+            <TextView
+                android:id="@+id/pierArrive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PierStyle"/>
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                style="@style/PriceStyle"/>
 
     </LinearLayout>
 

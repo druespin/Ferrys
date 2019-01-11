@@ -1,4 +1,4 @@
-package com.akostikov.datab.classes;
+package com.akostikov.datab.tables;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;

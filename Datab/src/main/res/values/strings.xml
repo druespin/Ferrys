@@ -9,4 +9,16 @@
         <item>Koh_Tao</item>
     </string-array>
 
+    <string name="departure">
+        <item>DEPARTURE</item>
+    </string>
+
+    <string name="arrival">
+        <item>ARRIVAL</item>
+    </string>
+
+    <string name="search">
+        <item>SEARCH</item>
+    </string>
+
 </resources>

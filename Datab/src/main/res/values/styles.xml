@@ -5,18 +5,32 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="TextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:textColor">#670</item>
-        <item name="android:textSize">15dp</item>
+    <style name="FerryLogoStyle">
+        <item name="android:textColor">#1da</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ListTextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
+    <style name="SelectTextStyle">
         <item name="android:textColor">#65a</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TimeStyle">
+        <item name="android:textColor">#d74</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PierStyle">
+        <item name="android:textColor">#38d</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="PriceStyle">
+        <item name="android:textColor">#abc</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Ferrys" parent="android:Theme.Holo.Light.NoActionBar" >
