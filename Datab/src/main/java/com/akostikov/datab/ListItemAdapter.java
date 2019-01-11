@@ -26,24 +26,47 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = inflater.inflate(this.layout, parent, false);
+        ViewHolder viewHolder;
 
-        ImageView boatLogo = view.findViewById(R.id.boatLogo);
-        TextView boat = view.findViewById(R.id.boat);
-        TextView depart = view.findViewById(R.id.depart);
-        TextView arrive = view.findViewById(R.id.arrive);
-        TextView time = view.findViewById(R.id.time);
-        TextView price = view.findViewById(R.id.price);
+        if (convertView == null) {
+
+            convertView = inflater.inflate(this.layout, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }
+        else    {
+                viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        ImageView boatLogo = convertView.findViewById(R.id.boatLogo);
+        TextView pier = convertView.findViewById(R.id.pier);
+        TextView depart = convertView.findViewById(R.id.depart);
+        TextView arrive = convertView.findViewById(R.id.arrive);
+        TextView price = convertView.findViewById(R.id.price);
 
         ListItem item = items.get(position);
 
-        //boatLogo.setImageResource(item.getBoatLogo());
-        boat.setText(item.getBoat());
+        boatLogo.setImageResource(item.getBoatLogo());
+        pier.setText(item.getPier());
         depart.setText(item.getDepart());
         arrive.setText(item.getArrive());
-        time.setText(item.getTime());
         price.setText(item.getPrice());
 
-        return view;
+        return convertView;
+    }
+
+    private class ViewHolder {
+        final ImageView boatLogo;
+        final TextView pier, depart, arrive, price;
+
+        ViewHolder(View view)   {
+
+            boatLogo = view.findViewById(R.id.boatLogo);
+            pier =  view.findViewById(R.id.pier);
+            depart = view.findViewById(R.id.depart);
+            arrive = view.findViewById(R.id.arrive);
+            price = view.findViewById(R.id.price);
+
+        }
     }
 }
