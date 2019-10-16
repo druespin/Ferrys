@@ -21,4 +21,8 @@
         <item>SEARCH</item>
     </string>
 
+    <string name="ferrytime">
+        <item>FERRY TIME</item>
+    </string>
+
 </resources>

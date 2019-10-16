@@ -1,18 +1,14 @@
 package com.akostikov.datab;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.akostikov.datab.data.FerryDBHelper;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
@@ -21,9 +17,7 @@ public class MainActivity extends Activity {
 
     Spinner spin1, spin2;
     Button btnSearch;
-    ListView listView;
 
-    final ArrayList<ListItem> tableItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,55 +27,39 @@ public class MainActivity extends Activity {
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
         btnSearch = findViewById(R.id.search);
-        listView = findViewById(R.id.list);
 
-        // Initialize DB
-        final FerryDBHelper dbHelper = new FerryDBHelper(getApplicationContext());
-
-        // Fill list adapter
-        final ListItemAdapter listAdapter = new ListItemAdapter(MainActivity.this,
-                R.layout.list_item, tableItems);
-
-        listView.setAdapter(listAdapter);
 
         // Invoke method to get departure and arrival from spinners
         setupSpinner();
 
         // Click 'Search' button
         btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        @Override
+        public void onClick (View v){
 
-                if (departure.equals("-Select-")) {
-                   Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (arrival.equals("-Select-")) {
-                    Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (!departure.equals("-Select-") && !arrival.equals("-Select-"))     {
-
-                    listAdapter.clear();
-
-                    // Get data from DB
-                    dbHelper.getWritableDatabase();
-
-                    dbHelper.showInfo(departure, arrival, tableItems);
-
-
-                    listAdapter.notifyDataSetChanged();
-                }
+            if (departure.equals("-Select-")) {
+                Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
 
-        dbHelper.close();
+            if (arrival.equals("-Select-")) {
+                Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!departure.equals("-Select-") && !arrival.equals("-Select-")) {
+
+                Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
+                intent.putExtra("dep",departure);
+                intent.putExtra("arr", arrival);
+                startActivity(intent);
+            }
+
+        }
+    });
     }
 
 
-    // Processing spinner selection
     private void setupSpinner() {
 
         ArrayAdapter spinAdapter1 = ArrayAdapter.createFromResource(this,
