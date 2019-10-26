@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -31,7 +30,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#2a7"
+        android:background="#4FAA88"
         android:orientation="vertical"
         android:showDividers="middle">
 
@@ -80,12 +79,21 @@
 
         <Button
             android:id="@+id/search"
+            style="@style/SelectTextStyle"
             android:layout_width="300dp"
-            android:layout_height="56dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
-            android:layout_margin="30dp"
+            android:layout_margin="50dp"
             android:background="#86C9E7"
+            android:ellipsize="middle"
             android:text="@string/search" />
+
+        <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="/" />
     </LinearLayout>
+
 
 </LinearLayout>

@@ -3,8 +3,8 @@ package com.akostikov.datab;
 
 public class ListItem {
 
-    int boatLogo;
-    String pierDepart, pierArrive, timeDepart, timeArrive, price;
+    private int boatLogo;
+    private String pierDepart, pierArrive, timeDepart, timeArrive, price;
 
     public ListItem(int boatLogo, String timeDepart, String pierDepart, String timeArrive,
                     String pierArrive, String price)  {

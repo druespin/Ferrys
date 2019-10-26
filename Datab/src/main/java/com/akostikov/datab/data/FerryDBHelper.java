@@ -23,6 +23,7 @@ import com.akostikov.datab.tables.TaoPhanganTable;
 import com.akostikov.datab.tables.TaoSamuiTable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FerryDBHelper extends SQLiteOpenHelper {
@@ -43,7 +44,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
     private PhanganTaoTable phanganTao = new PhanganTaoTable();
 
     public FerryDBHelper(Context context)  {
-        super(context, DATABASE_NAME, null, 4);
+        super(context, DATABASE_NAME, null, 5);
     }
 
     @Override
@@ -107,7 +108,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
     }
 
     // Get data from table
-    public void showInfo(String departure, String arrival, ArrayList<ListItem> tableItems)  {
+    public void getDataFromDB(String departure, String arrival, List<ListItem> tableItems)  {
 
         SQLiteDatabase dB = this.getReadableDatabase();
 

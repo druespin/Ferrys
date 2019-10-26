@@ -16,6 +16,7 @@
         android:orientation="vertical"
         android:layout_margin="10dp">
 
+        // Departure time and pier
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -24,7 +25,7 @@
 
             <TextView
                 android:id="@+id/timeDepart"
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 style="@style/TimeStyle"/>
 
@@ -36,6 +37,7 @@
 
         </LinearLayout>
 
+        // Arrival time and pier
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -44,9 +46,8 @@
 
             <TextView
                 android:id="@+id/timeArrive"
-                android:layout_width="50dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-
                 style="@style/TimeStyle"/>
 
             <TextView
@@ -61,7 +62,7 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
+                android:layout_gravity="end"
                 android:layout_marginTop="15dp"
                 style="@style/PriceStyle"/>
 

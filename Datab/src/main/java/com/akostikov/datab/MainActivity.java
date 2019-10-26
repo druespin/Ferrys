@@ -39,15 +39,13 @@ public class MainActivity extends Activity {
 
             if (departure.equals("-Select-")) {
                 Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
-                return;
             }
 
-            if (arrival.equals("-Select-")) {
+            else if (arrival.equals("-Select-")) {
                 Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
-                return;
             }
 
-            if (!departure.equals("-Select-") && !arrival.equals("-Select-")) {
+            else {
 
                 Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
                 intent.putExtra("dep",departure);

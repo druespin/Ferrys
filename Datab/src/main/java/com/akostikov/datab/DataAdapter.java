@@ -13,26 +13,24 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
 
-    private LayoutInflater inflater;
     private ArrayList<ListItem> items;
 
-    public DataAdapter(Context context, ArrayList<ListItem> items)  {
-        this.inflater = LayoutInflater.from(context);
+    public DataAdapter(ArrayList<ListItem> items)  {
         this.items = items;
     }
 
-
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        View view = inflater.inflate(R.layout.list_item, parent,false);
-        return new ViewHolder(view);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_item, parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int position) {
 
         ListItem item = items.get(position);
 
@@ -47,14 +45,15 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
         final ImageView boatLogo;
         final TextView timeDepart, timeArrive, pierDepart, pierArrive, price;
 
-        ViewHolder(View view)   {
+        MyViewHolder(View view)   {
             super(view);
 
             boatLogo = view.findViewById(R.id.boatLogo);
