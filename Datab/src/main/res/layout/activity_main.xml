@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="20dp"
         android:orientation="vertical">
 
         <ImageView
@@ -30,7 +30,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4FAA88"
+        android:background="@drawable/tide1"
         android:orientation="vertical"
         android:showDividers="middle">
 
@@ -38,61 +38,60 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/SelectTextStyle"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:text="@string/departure" />
 
             <Spinner
                 android:id="@+id/spinner1"
-                style="@android:style/Widget.Material.Light.Spinner.Underlined"
+                style="@style/SpinnerStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:entries="@array/items"
                 android:focusable="auto" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_margin="30dp"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/SelectTextStyle"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="end"
                 android:text="@string/arrival" />
 
             <Spinner
                 android:id="@+id/spinner2"
-                style="@android:style/Widget.Material.Spinner.Underlined"
+                style="@style/SpinnerStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/items" />
+                android:layout_height="40dp"
+                android:entries="@array/items"
+                android:focusable="auto"/>
+
         </LinearLayout>
 
         <Button
             android:id="@+id/search"
-            style="@style/SelectTextStyle"
+            style="@style/SearchButtonStyle"
             android:layout_width="300dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
             android:layout_margin="50dp"
-            android:background="#86C9E7"
-            android:ellipsize="middle"
             android:text="@string/search" />
 
-        <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="/" />
     </LinearLayout>
 
 

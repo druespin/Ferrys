@@ -25,4 +25,8 @@
         <item>FERRY TIME</item>
     </string>
 
+    <string name="back">
+        <item>BACK</item>
+    </string>
+
 </resources>
