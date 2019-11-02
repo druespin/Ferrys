@@ -1,32 +1,45 @@
 <resources>
     <string name="app_name">Ferrys</string>
 
-    <string-array name="items">
-        <item>-Select-</item>
+    <string-array name="departure_items">
+        <item>- DEPARTURE -</item>
         <item>Don_Sak</item>
         <item>Samui</item>
         <item>Phangan</item>
         <item>Koh_Tao</item>
     </string-array>
 
-    <string name="departure">
-        <item>DEPARTURE</item>
-    </string>
+    <string-array name="arrival_items">
+        <item>- ARRIVAL -</item>
+        <item>Don_Sak</item>
+        <item>Samui</item>
+        <item>Phangan</item>
+        <item>Koh_Tao</item>
+    </string-array>
 
-    <string name="arrival">
-        <item>ARRIVAL</item>
-    </string>
 
-    <string name="search">
-        <item>SEARCH</item>
-    </string>
+    <string name="departure">DEPARTURE</string>
 
-    <string name="ferrytime">
-        <item>FERRY TIME</item>
-    </string>
+    <string name="arrival">ARRIVAL</string>
 
-    <string name="back">
-        <item>BACK</item>
-    </string>
+    <string name="search">SEARCH</string>
+
+    <string name="ferrytime">FERRY TIME</string>
+
+    <string name="ferry_companies">Ferrys</string>
+
+    <string name="islands">Islands</string>
+
+    <string name="info">Info</string>
+
+    <string name="lomprayah">Lomprayah</string>
+
+    <string name="seatran">Seatran</string>
+
+    <string name="songserm">Songserm</string>
+
+    <string name="raja">Raja</string>
+
+    <string name="haadrin_queen">Haadrin Queen</string>
 
 </resources>

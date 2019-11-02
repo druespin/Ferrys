@@ -3,6 +3,11 @@ package com.akostikov.datab;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,18 +16,38 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     String departure, arrival;
 
+    Toolbar toolbar;
     Spinner spin1, spin2;
     Button btnSearch;
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //if (item.getItemId() == R.layout.ferrys_page) {
+            Intent intent = new Intent(this, MenuOptionActivity.class);
+            startActivity(intent);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Inflate a menu to be displayed in the toolbar
+        toolbar.inflateMenu(R.menu.main_menu);
 
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
@@ -37,11 +62,11 @@ public class MainActivity extends Activity {
         @Override
         public void onClick (View v){
 
-            if (departure.equals("-Select-")) {
+            if (departure.equals("- DEPARTURE-")) {
                 Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
             }
 
-            else if (arrival.equals("-Select-")) {
+            else if (arrival.equals("- ARRIVAL -")) {
                 Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
             }
 
@@ -61,17 +86,16 @@ public class MainActivity extends Activity {
     private void setupSpinner() {
 
         ArrayAdapter spinAdapter1 = ArrayAdapter.createFromResource(this,
-                R.array.items, android.R.layout.simple_spinner_item);
+                R.array.departure_items, android.R.layout.simple_spinner_item);
 
         ArrayAdapter spinAdapter2 = ArrayAdapter.createFromResource(this,
-                R.array.items, android.R.layout.simple_spinner_item);
+                R.array.arrival_items, android.R.layout.simple_spinner_item);
 
         spinAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spin1.setAdapter(spinAdapter1);
         spin2.setAdapter(spinAdapter2);
-
 
         // Get Departure from Spinner 1
         spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -43,9 +43,7 @@ public class ResultsActivity extends Activity {
         // Get data from DB
         new GetDataFromDbTask().execute(tableItems);
 
-
         dataAdapter.notifyDataSetChanged();
-
     }
 
     // Async task to get data from DB
@@ -60,7 +58,8 @@ public class ResultsActivity extends Activity {
 
             return null;
         }
-
     }
+
+
 }
 
