@@ -1,7 +1,11 @@
 # Ferrys
 
-Ferrys app provides schedule of the ferries sailing between Surat Thani and 3 islands in the Gulf of Thailand: 
+Ferrys app provides schedule for the ferries sailing between Surat Thani and 3 islands in the Gulf of Thailand: 
 Koh Samui, Koh Phangan and Koh Tao.
+
+![screen-1]()
+![screen-2]()
+
 
 ## Dependency
 
