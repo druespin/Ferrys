@@ -3,8 +3,8 @@
 Ferrys app provides schedule for the ferries sailing between Surat Thani and 3 islands in the Gulf of Thailand: 
 Koh Samui, Koh Phangan and Koh Tao.
 
-![screen-1](https://github.com/druespin/Ferrys/app/src/main/res/drawable/screen_1.png)
-![screen-2](https://github.com/druespin/Ferrys/app/src/main/res/drawable/screen_2.png)
+![screen-1](https://github.com/druespin/Ferrys/blob/master/app/src/main/res/drawable/screen_1.png)
+![screen-2](https://github.com/druespin/Ferrys/blob/master/app/src/main/res/drawable/screen_2.png)
 
 
 ## Dependency
