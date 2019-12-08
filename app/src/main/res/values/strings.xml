@@ -53,4 +53,10 @@
     <string name="songserm_routes">Koh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
 
     <string name="haadrin_queen_routes">Koh Samui - Koh Phangan</string>
+
+    <string name="samui_info">AAAAAAAAAA</string>
+
+    <string name="phangan_info">AAAAAAAAAA</string>
+
+    <string name="tao_info">AAAAAAAAAA</string>
 </resources>

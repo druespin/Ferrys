@@ -31,9 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //if (item.getItemId() == R.layout.ferrys_page) {
-            Intent intent = new Intent(this, MenuOptionActivity.class);
-            startActivity(intent);
+        Intent intent = null;
+        switch (item.getItemId())
+        {
+            case R.id.ferry_companies: {
+                intent = new Intent(this, FerrysPageActivity.class);
+                break;
+            }
+            case R.id.islands:  {
+                intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+        }
+        if (intent != null) startActivity(intent);
         return true;
     }
 

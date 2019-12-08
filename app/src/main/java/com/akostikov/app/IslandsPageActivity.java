@@ -2,13 +2,14 @@ package com.akostikov.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MenuOptionActivity extends AppCompatActivity {
+import java.util.logging.Logger;
+
+class IslandsPageActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
@@ -20,22 +21,29 @@ public class MenuOptionActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //if (item.getItemId() == R.layout.ferrys_page) {
-        Intent intent = new Intent(this, MenuOptionActivity.class);
-        startActivity(intent);
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.layout.ferrys_page: {
+                intent = new Intent(this, FerrysPageActivity.class);
+                break;
+            }
+            case R.layout.islands_page: {
+                intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+        }
+        Logger.getLogger("Item check------");
+        if (intent != null) startActivity(intent);
         return true;
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.ferrys_page);
+        setContentView(R.layout.islands_page);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Inflate a menu to be displayed in the toolbar
-        toolbar.inflateMenu(R.menu.main_menu);
     }
+
 }

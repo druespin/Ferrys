@@ -1,5 +1,6 @@
 package com.akostikov.app;
 
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
 
 import com.akostikov.app.data.FerryDBHelper;
 import java.util.ArrayList;
@@ -35,9 +36,19 @@ public class ResultsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //if (item.getItemId() == R.layout.ferrys_page) {
-        Intent intent = new Intent(this, MenuOptionActivity.class);
-        startActivity(intent);
+        Intent intent = null;
+
+        switch (item.getItemId()) {
+            case R.layout.ferrys_page: {
+                intent = new Intent(this, FerrysPageActivity.class);
+                break;
+            }
+            case R.layout.islands_page: {
+                intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+        }
+        if (intent != null) startActivity(intent);
         return true;
     }
 

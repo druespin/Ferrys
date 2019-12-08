@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="com.akostikov.app.ResultsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -23,7 +24,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.akostikov.app.MenuOptionActivity">
+
+        <activity android:name="com.akostikov.app.FerrysPageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.akostikov.app.IslandsPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
