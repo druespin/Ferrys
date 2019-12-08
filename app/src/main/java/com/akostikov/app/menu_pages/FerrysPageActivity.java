@@ -1,4 +1,4 @@
-package com.akostikov.app;
+package com.akostikov.app.menu_pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.akostikov.app.R;
 
-import java.util.logging.Logger;
-
-class IslandsPageActivity extends AppCompatActivity {
+public class FerrysPageActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
@@ -23,16 +22,15 @@ class IslandsPageActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
         switch (item.getItemId()) {
-            case R.layout.ferrys_page: {
+            case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
             }
-            case R.layout.islands_page: {
+            case R.id.islands: {
                 intent = new Intent(this, IslandsPageActivity.class);
                 break;
             }
         }
-        Logger.getLogger("Item check------");
         if (intent != null) startActivity(intent);
         return true;
     }
@@ -40,10 +38,11 @@ class IslandsPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.islands_page);
+        setContentView(R.layout.ferrys_page);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
 
+        toolbar.setTitle(R.string.ferry_companies);
+    }
 }

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.FerrysPageActivity">
+        <activity android:name="com.akostikov.app.menu_pages.FerrysPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.IslandsPageActivity">
+        <activity android:name="com.akostikov.app.menu_pages.IslandsPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

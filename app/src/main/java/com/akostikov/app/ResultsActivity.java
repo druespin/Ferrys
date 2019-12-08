@@ -13,6 +13,9 @@ import android.view.MenuItem;
 
 
 import com.akostikov.app.data.FerryDBHelper;
+import com.akostikov.app.menu_pages.FerrysPageActivity;
+import com.akostikov.app.menu_pages.IslandsPageActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,12 +41,13 @@ public class ResultsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
 
-        switch (item.getItemId()) {
-            case R.layout.ferrys_page: {
+        switch (item.getItemId())
+        {
+            case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
             }
-            case R.layout.islands_page: {
+            case R.id.islands:  {
                 intent = new Intent(this, IslandsPageActivity.class);
                 break;
             }
