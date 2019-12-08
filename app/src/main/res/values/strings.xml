@@ -1,11 +1,56 @@
 <resources>
     <string name="app_name">Ferrys</string>
 
-    <string-array name="islands">
-        <item>Koh Samui</item>
-        <item>Koh Phangan</item>
+    <string-array name="departure_items">
+        <item>- DEPARTURE -</item>
         <item>Don Sak</item>
+        <item>Samui</item>
+        <item>Phangan</item>
         <item>Koh Tao</item>
     </string-array>
 
+    <string-array name="arrival_items">
+        <item>- ARRIVAL -</item>
+        <item>Don Sak</item>
+        <item>Samui</item>
+        <item>Phangan</item>
+        <item>Koh Tao</item>
+    </string-array>
+
+    <string name="search_results">RESULTS</string>
+
+    <string name="departure">DEPARTURE</string>
+
+    <string name="arrival">ARRIVAL</string>
+
+    <string name="search">SEARCH</string>
+
+    <string name="ferrytime" id="ferrytime">FERRY TIME</string>
+
+    <string name="ferry_companies">Ferrys</string>
+
+    <string name="islands">Islands</string>
+
+    <string name="info">Info</string>
+
+    <string name="lomprayah">Lomprayah</string>
+
+    <string name="seatran">Seatran</string>
+
+    <string name="songserm">Songserm</string>
+
+    <string name="raja">Raja</string>
+
+    <string name="haadrin_queen">Haadrin Queen</string>
+
+    <string name="raja_routes">Don Sak - Koh Samui\nDon Sak - Koh Phangan\nKoh Samui - Koh Phangan</string>
+
+    <string name="lomprayah_routes">Koh Samui - Koh Phangan\nKoh Samui - Koh tao\nKoh Phangan - Koh Tao</string>
+
+    <string name="seatran_routes">Don Sak - Koh Samui\nDon Sak - Koh Phangan\nDon Sak - Koh Tao\n
+        Koh Samui - Koh Phangan\nKoh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
+
+    <string name="songserm_routes">Koh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
+
+    <string name="haadrin_queen_routes">Koh Samui - Koh Phangan</string>
 </resources>
