@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.akostikov.app.data.FerryDBHelper;
 import com.akostikov.app.menu_pages.FerrysPageActivity;
+import com.akostikov.app.menu_pages.InfoPageActivity;
 import com.akostikov.app.menu_pages.IslandsPageActivity;
 
 import java.util.ArrayList;
@@ -22,7 +23,6 @@ import java.util.List;
 
 public class ResultsActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private static String departure;
     private static String arrival;
 
@@ -51,6 +51,10 @@ public class ResultsActivity extends AppCompatActivity {
                 intent = new Intent(this, IslandsPageActivity.class);
                 break;
             }
+            case R.id.info:  {
+                intent = new Intent(this, InfoPageActivity.class);
+                break;
+            }
         }
         if (intent != null) startActivity(intent);
         return true;
@@ -61,7 +65,7 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_results);
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Inflate a menu to be displayed in the toolbar

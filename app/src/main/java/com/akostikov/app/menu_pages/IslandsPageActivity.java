@@ -2,21 +2,19 @@ package com.akostikov.app.menu_pages;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.akostikov.app.R;
-import java.util.logging.Logger;
+
 
 public class IslandsPageActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_for_islands_page, menu);
         return true;
     }
 
@@ -29,12 +27,12 @@ public class IslandsPageActivity extends AppCompatActivity {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
             }
-            case R.id.islands:  {
-                intent = new Intent(this, IslandsPageActivity.class);
+            case R.id.info:  {
+                intent = new Intent(this, InfoPageActivity.class);
                 break;
             }
         }
-        Logger.getLogger("Item check------");
+
         if (intent != null) startActivity(intent);
         return true;
     }
@@ -44,10 +42,11 @@ public class IslandsPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.islands_page);
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setTitle(R.string.islands);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
 }

@@ -52,7 +52,7 @@
     <style name="SearchButtonStyle">
         <item name="android:background">@drawable/search_btn</item>
         <item name="android:colorButtonNormal">#62B999</item>
-        <item name="android:colorControlHighlight">#673ab7</item>
+        <item name="android:colorControlHighlight">#69e</item>
     </style>
 
     <style name="SpinnerStyle">

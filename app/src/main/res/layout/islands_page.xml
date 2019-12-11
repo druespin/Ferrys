@@ -13,8 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:textAlignment="textStart"
-        app:title="@string/ferrytime"
-        app:titleMarginStart="20dp"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:titleTextColor="#FFFFFF"
         tools:visibility="visible" />
@@ -31,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Koh Samui" />
+            android:text="@string/koh_samui" />
 
         <TextView
             android:id="@+id/samui_info"
@@ -55,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Koh Phangan" />
+            android:text="@string/koh_phangan" />
 
         <TextView
             android:id="@+id/phangan_info"
@@ -79,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Koh Tao" />
+            android:text="@string/koh_tao" />
 
         <TextView
             android:id="@+id/kohtao_info"
@@ -88,4 +86,5 @@
             android:layout_height="wrap_content"
             android:text="@string/tao_info" />
     </LinearLayout>
+
 </LinearLayout>

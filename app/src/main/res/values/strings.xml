@@ -25,13 +25,13 @@
 
     <string name="search">SEARCH</string>
 
-    <string name="ferrytime" id="ferrytime">FERRY TIME</string>
+    <string name="ferrytime">FERRY TIME</string>
 
     <string name="ferry_companies">Ferries</string>
 
     <string name="islands">Islands</string>
 
-    <string name="info">Info</string>
+    <string name="info">About App</string>
 
     <string name="lomprayah">Lomprayah</string>
 
@@ -47,16 +47,25 @@
 
     <string name="lomprayah_routes">Koh Samui - Koh Phangan\nKoh Samui - Koh tao\nKoh Phangan - Koh Tao</string>
 
-    <string name="seatran_routes">Don Sak - Koh Samui\nDon Sak - Koh Phangan\nDon Sak - Koh Tao\n
-        Koh Samui - Koh Phangan\nKoh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
+    <string name="seatran_routes">Don Sak - Koh Samui\nDon Sak - Koh Phangan\nDon Sak - Koh Tao\nKoh Samui - Koh Phangan\nKoh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
 
     <string name="songserm_routes">Koh Samui - Koh Tao\nKoh Phangan - Koh Tao</string>
 
     <string name="haadrin_queen_routes">Koh Samui - Koh Phangan</string>
+
+    <string name="koh_samui">Koh Samui</string>
+
+    <string name="koh_phangan">Koh Phangan</string>
+
+    <string name="koh_tao">Koh Tao</string>
 
     <string name="samui_info">AAAAAAAAAA</string>
 
     <string name="phangan_info">AAAAAAAAAA</string>
 
     <string name="tao_info">AAAAAAAAAA</string>
+
+    <string name="about_title">About this App</string>
+
+    <string name="about_text">Ferrys app is under continious development.\nMore fancy features are on the way!</string>
 </resources>

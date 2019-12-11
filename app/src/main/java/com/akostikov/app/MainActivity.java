@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.akostikov.app.menu_pages.FerrysPageActivity;
+import com.akostikov.app.menu_pages.InfoPageActivity;
 import com.akostikov.app.menu_pages.IslandsPageActivity;
 
 
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.islands:  {
                 intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+            case R.id.info:  {
+                intent = new Intent(this, InfoPageActivity.class);
                 break;
             }
         }

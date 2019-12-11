@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.akostikov.app">
 
     <application
@@ -9,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.akostikov.app.MainActivity">
+
+        <activity
+            android:name="com.akostikov.app.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +28,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.menu_pages.FerrysPageActivity">
+        <activity
+            android:name="com.akostikov.app.menu_pages.FerrysPageActivity"
+            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:label="@string/ferry_companies">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -33,7 +39,23 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.menu_pages.IslandsPageActivity">
+        <activity
+            android:name="com.akostikov.app.menu_pages.IslandsPageActivity"
+            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:label="@string/islands">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.akostikov.app.menu_pages.InfoPageActivity"
+            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:label="@string/about_title">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
