@@ -20,9 +20,11 @@ public class IslandsPageActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
         switch (item.getItemId())
         {
+            default: return super.onOptionsItemSelected(item);
+
             case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
@@ -32,8 +34,7 @@ public class IslandsPageActivity extends AppCompatActivity {
                 break;
             }
         }
-
-        if (intent != null) startActivity(intent);
+        startActivity(intent);
         return true;
     }
 

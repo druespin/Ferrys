@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.akostikov.app.R;
 
 public class FerrysPageActivity extends AppCompatActivity {
@@ -21,8 +22,11 @@ public class FerrysPageActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
         switch (item.getItemId()) {
+
+            default: return super.onOptionsItemSelected(item);
+
             case R.id.info: {
                 intent = new Intent(this, InfoPageActivity.class);
                 break;
@@ -32,7 +36,7 @@ public class FerrysPageActivity extends AppCompatActivity {
                 break;
             }
         }
-        if (intent != null) startActivity(intent);
+        startActivity(intent);
         return true;
     }
 
@@ -43,8 +47,7 @@ public class FerrysPageActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

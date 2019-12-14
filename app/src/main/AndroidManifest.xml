@@ -20,7 +20,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.ResultsActivity">
+        <activity android:name="com.akostikov.app.ResultsActivity"
+            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:label="@string/search_results">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -32,6 +35,7 @@
             android:name="com.akostikov.app.menu_pages.FerrysPageActivity"
             android:parentActivityName="com.akostikov.app.MainActivity"
             android:label="@string/ferry_companies">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

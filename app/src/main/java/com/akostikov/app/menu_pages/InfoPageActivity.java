@@ -24,9 +24,11 @@ public class InfoPageActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
         switch (item.getItemId())
         {
+            default: return super.onOptionsItemSelected(item);
+
             case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;

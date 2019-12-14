@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Inflate a menu to be displayed in the toolbar
-        toolbar.inflateMenu(R.menu.main_menu);
+        // toolbar.inflateMenu(R.menu.main_menu);
 
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
@@ -82,8 +82,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
             }
 
-            else if (arrival.equals("- ARRIVAL -")) {
+            if (arrival.equals("- ARRIVAL -")) {
                 Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
+            }
+
+            if (departure.equals(arrival))  {
+                Toast.makeText(getApplicationContext(), "Try again please", Toast.LENGTH_SHORT).show();
             }
 
             else {

@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 import com.akostikov.app.data.FerryDBHelper;
 import com.akostikov.app.menu_pages.FerrysPageActivity;
 import com.akostikov.app.menu_pages.InfoPageActivity;
@@ -39,10 +38,12 @@ public class ResultsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
 
         switch (item.getItemId())
         {
+            default: return super.onOptionsItemSelected(item);
+
             case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
@@ -56,7 +57,7 @@ public class ResultsActivity extends AppCompatActivity {
                 break;
             }
         }
-        if (intent != null) startActivity(intent);
+        startActivity(intent);
         return true;
     }
 
@@ -68,8 +69,9 @@ public class ResultsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Inflate a menu to be displayed in the toolbar
-        toolbar.inflateMenu(R.menu.main_menu);
+        // Set the Up button action
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.recycler);
 
@@ -82,9 +84,9 @@ public class ResultsActivity extends AppCompatActivity {
         recyclerView.setAdapter(dataAdapter);
 
         // Get departure and arrival from intent
-            Bundle args = getIntent().getExtras();
-            departure = args.getString("dep");
-            arrival = args.getString("arr");
+        Bundle args = getIntent().getExtras();
+        departure = args.getString("dep");
+        arrival = args.getString("arr");
 
             toolbar.setTitle(departure + " - " + arrival);
         // Get data from DB
