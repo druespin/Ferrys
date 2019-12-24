@@ -18,13 +18,14 @@
         tools:visibility="visible" />
 
     <LinearLayout
+        android:id="@+id/layout_samui"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv1"
             style="@style/PierStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,16 +33,21 @@
             android:text="@string/koh_samui" />
 
         <TextView
-            android:id="@+id/samui_info"
+            android:id="@+id/samui_text"
             style="@android:style/Widget.Material.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
             android:text="@string/samui_info" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_phangan"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
@@ -56,16 +62,21 @@
             android:text="@string/koh_phangan" />
 
         <TextView
-            android:id="@+id/phangan_info"
+            android:id="@+id/phangan_text"
             style="@android:style/Widget.Material.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
             android:text="@string/phangan_info" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_tao"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
@@ -80,10 +91,14 @@
             android:text="@string/koh_tao" />
 
         <TextView
-            android:id="@+id/kohtao_info"
+            android:id="@+id/tao_text"
             style="@android:style/Widget.Material.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
             android:text="@string/tao_info" />
     </LinearLayout>
 

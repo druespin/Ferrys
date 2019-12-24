@@ -22,8 +22,6 @@ import com.akostikov.app.menu_pages.IslandsPageActivity;
 public class MainActivity extends AppCompatActivity {
 
     String departure, arrival;
-
-    Toolbar toolbar;
     Spinner spin1, spin2;
     Button btnSearch;
 
@@ -35,9 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
+
         switch (item.getItemId())
         {
+
+            default: return false;
+
             case R.id.ferry_companies: {
                 intent = new Intent(this, FerrysPageActivity.class);
                 break;
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-        if (intent != null) startActivity(intent);
+        startActivity(intent);
         return true;
     }
 
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Inflate a menu to be displayed in the toolbar
@@ -82,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
             }
 
-            if (arrival.equals("- ARRIVAL -")) {
+            else if (arrival.equals("- ARRIVAL -")) {
                 Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
             }
 
-            if (departure.equals(arrival))  {
+            else if (departure.equals(arrival))  {
                 Toast.makeText(getApplicationContext(), "Try again please", Toast.LENGTH_SHORT).show();
             }
 

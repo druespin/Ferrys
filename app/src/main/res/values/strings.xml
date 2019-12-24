@@ -59,13 +59,20 @@
 
     <string name="koh_tao">Koh Tao</string>
 
-    <string name="samui_info">AAAAAAAAAA</string>
+    <string name="samui_info">Ko Samui (or Koh Samui, also often locally shortened to KohSam, Thai: เกาะสมุย, pronounced [kɔ̀ʔ.sàʔ.mǔj]) is an island and city (thesaban nakhon) off the east coast of the Kra Isthmus, Thailand. Geographically in the Chumphon Archipelago, it is part of Surat Thani Province, though as of 2012, Ko Samui was granted municipal status and thus is now locally self-governing. Ko Samui is Thailand\'s second-largest island after Phuket and Koh Chang, with an area of 228.7 km2, a population of over 63,000 and a hotel occupancy rate of 73% as the number of visitors increases.[2] Abundant tourist resources, sandy beaches, coral reefs, and coconut trees are present on the island.</string>
+    <string name="phangan_info">The best time to visit the island and also high season is during December-March when the water is high, clean, and good for swimming. It is also not rainy and temperatures are pleasant. Another high season time is during July/August after dry season when the water is rising. Avoid visiting the island during dry season, Apr-Jun, when all of the best beaches on the northwest coast (Mae Haad, Haad Yao, Chalok Lam, Haad Khom) are useless for swimming due to shallow water. Swimming in this season is possible only on the north coast on beautiful Bottle Beach , less accessible east coast (Thong Nai Pan, Haad Sadet, Haad Rin), where the only beach with good access and swimming is Haad Rin, which is not as crowded at this time. The south coast should be avoided all year due to bad water and sand.</string>
+    <string name="tao_info">Ko Tao is one of Thailand\'s most popular tourist spots. Although the Bangkok Post cannot decide if it receives 132,000[14] or three million visitors a year,[15] it does receive a lot.
+The island is well known for scuba diving and snorkeling, as well as hiking, rock climbing, and bouldering. The most popular place for tourists is Sairee on the west coast, which has a white sandy beach of 1.7 km interrupted only by a few huge boulders and a scattering of medium budget resorts and restaurants. Chalok Baan Khao, to the south of the island, is becoming increasingly popular as an alternative for those wishing to escape the crowds. A great many granite boulders, both in the forests and on the beaches of Ko Tao, attract a growing number of climbers.</string>
 
-    <string name="phangan_info">AAAAAAAAAA</string>
-
-    <string name="tao_info">AAAAAAAAAA</string>
-
+<!--Info page values-->
     <string name="about_title">About this App</string>
 
-    <string name="about_text">Ferrys app is under continious development.\nMore fancy features are on the way!</string>
+    <string name="about_text_1">The application code is available on Github:</string>
+    <string name="github_link">https://github.com/druespin/Ferrys</string>
+    <string name="about_text_2">The app is under continuous development.\nMore fancy features are on the way!</string>
+
+<!--Context menu items-->
+    <string name="copy">Copy</string>
+    <string name="open">Open</string>
+
 </resources>

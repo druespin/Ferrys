@@ -1,20 +1,28 @@
 package com.akostikov.app.menu_pages;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.akostikov.app.R;
-
 import java.util.logging.Logger;
+
 
 public class InfoPageActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+    private TextView github;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,7 +46,7 @@ public class InfoPageActivity extends AppCompatActivity {
                 break;
             }
         }
-        if (intent != null) startActivity(intent);
+        startActivity(intent);
         return true;
     }
 
@@ -47,11 +55,54 @@ public class InfoPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_page);
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        github = findViewById(R.id.github_link);
+        registerForContextMenu(github);
+
+        github.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLinkInChrome();
+            }
+        });
+
+        github.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
+            }
+        });
     }
 
+    void openLinkInChrome() {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        builder.setToolbarColor(Color.GREEN);
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(this, Uri.parse(github.getText().toString()));
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.open:
+                openLinkInChrome();
+                return true;
+            case R.id.copy:
+
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
 }
