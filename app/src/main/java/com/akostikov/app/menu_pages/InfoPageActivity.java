@@ -1,5 +1,8 @@
 package com.akostikov.app.menu_pages;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -93,13 +96,16 @@ public class InfoPageActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.open:
                 openLinkInChrome();
                 return true;
             case R.id.copy:
-
+                ClipboardManager clipboard = (ClipboardManager)
+                        getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("github link", github.getText());
+                clipboard.setPrimaryClip(clip);
                 return true;
             default:
                 return super.onContextItemSelected(item);
