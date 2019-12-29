@@ -58,6 +58,17 @@
         </activity>
 
         <activity
+            android:name="com.akostikov.app.menu_pages.MapPageActivity"
+            android:parentActivityName="com.akostikov.app.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="com.akostikov.app.menu_pages.InfoPageActivity"
             android:parentActivityName="com.akostikov.app.MainActivity"
             android:label="@string/about_title">

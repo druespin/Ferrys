@@ -22,13 +22,6 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError false
-        warningsAsErrors false
-        lintConfig file('./lint_tool/lint.xml')
-        lintOptions.getEnable()
-    }
-
 }
 
 dependencies {

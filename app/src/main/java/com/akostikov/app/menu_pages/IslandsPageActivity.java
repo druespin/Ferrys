@@ -14,8 +14,8 @@ import com.akostikov.app.R;
 
 public class IslandsPageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tv1, tv2, tv3,
-            samuiText, phanganText, taoText;
+    private TextView tv_samui, tv_phangan, tv_tao;
+    private TextView samuiText, phanganText, taoText;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,14 +52,18 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tv1 = findViewById(R.id.tv1);
-        tv2 = findViewById(R.id.tv2);
-        tv3 = findViewById(R.id.tv3);
+        tv_samui = findViewById(R.id.tv_samui);
+        tv_phangan = findViewById(R.id.tv_phangan);
+        tv_tao = findViewById(R.id.tv_tao);
+
 
         samuiText = findViewById(R.id.samui_text);
         phanganText = findViewById(R.id.phangan_text);
         taoText = findViewById(R.id.tao_text);
 
+        tv_samui.setOnClickListener(this);
+        tv_phangan.setOnClickListener(this);
+        tv_tao.setOnClickListener(this);
         samuiText.setOnClickListener(this);
         phanganText.setOnClickListener(this);
         taoText.setOnClickListener(this);
@@ -68,6 +72,18 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
     @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.tv_samui: {
+                    startMapPageActivity("samui");
+                    break;
+                }
+                case R.id.tv_phangan: {
+                    startMapPageActivity("phangan");
+                    break;
+                }
+                case R.id.tv_tao: {
+                    startMapPageActivity("tao");
+                    break;
+                }
                 case R.id.samui_text: {
                     expandCollapseInfo(samuiText);
                     break;
@@ -83,6 +99,11 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
             }
     }
 
+    void startMapPageActivity(String island)   {
+        Intent intent = new Intent(getApplicationContext(), MapPageActivity.class);
+        intent.putExtra("island", island);
+        startActivity(intent);
+    }
 
     void expandCollapseInfo(TextView tv)   {
         if (tv.getMaxLines() == 3) {
