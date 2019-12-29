@@ -56,7 +56,6 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
         tv_phangan = findViewById(R.id.tv_phangan);
         tv_tao = findViewById(R.id.tv_tao);
 
-
         samuiText = findViewById(R.id.samui_text);
         phanganText = findViewById(R.id.phangan_text);
         taoText = findViewById(R.id.tao_text);
@@ -64,6 +63,7 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
         tv_samui.setOnClickListener(this);
         tv_phangan.setOnClickListener(this);
         tv_tao.setOnClickListener(this);
+
         samuiText.setOnClickListener(this);
         phanganText.setOnClickListener(this);
         taoText.setOnClickListener(this);
@@ -72,6 +72,7 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
     @Override
         public void onClick(View v) {
             switch (v.getId()) {
+
                 case R.id.tv_samui: {
                     startMapPageActivity("samui");
                     break;
@@ -84,6 +85,7 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
                     startMapPageActivity("tao");
                     break;
                 }
+
                 case R.id.samui_text: {
                     expandCollapseInfo(samuiText);
                     break;

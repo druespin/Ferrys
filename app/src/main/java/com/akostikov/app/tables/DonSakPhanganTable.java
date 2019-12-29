@@ -8,14 +8,14 @@ import com.akostikov.app.data.FerryContract;
 public class DonSakPhanganTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
-            {"Raja", "6:00", "Raja Ferry Pier", "8:30", "Thong Sala Pier", "210 B"},
-            {"Raja", "8:00", "Raja Ferry Pier", "10:30", "Thong Sala Pier", "210 B"},
-            {"Raja", "10:00", "Raja Ferry Pier", "12:30", "Thong Sala Pier", "210 B"},
-            {"Seatran", "11:00", "Seatran Ferry Pier", "13:30", "Thong Sala Pier", "450 B"},
-            {"Raja", "14:00", "Raja Ferry Pier", "16:30", "Thong Sala Pier", "210 B"},
-            {"Seatran", "14:30", "Seatran Ferry Pier", "17:00", "Thong Sala Pier", "450 B"},
-            {"Raja", "16:00", "Raja Ferry Pier", "18:30", "Thong Sala Pier", "210 B"},
-            {"Raja", "18:00", "Raja Ferry Pier", "20:30", "Thong Sala Pier", "210 B" }
+            {"Raja", "6:00", "Raja Ferry Pier", "8:30", "Thong Sala Pier", "210 THB"},
+            {"Raja", "8:00", "Raja Ferry Pier", "10:30", "Thong Sala Pier", "210 THB"},
+            {"Raja", "10:00", "Raja Ferry Pier", "12:30", "Thong Sala Pier", "210 THB"},
+            {"Seatran", "11:00", "Seatran Ferry Pier", "13:30", "Thong Sala Pier", "450 THB"},
+            {"Raja", "14:00", "Raja Ferry Pier", "16:30", "Thong Sala Pier", "210 THB"},
+            {"Seatran", "14:30", "Seatran Ferry Pier", "17:00", "Thong Sala Pier", "450 THB"},
+            {"Raja", "16:00", "Raja Ferry Pier", "18:30", "Thong Sala Pier", "210 THB"},
+            {"Raja", "18:00", "Raja Ferry Pier", "20:30", "Thong Sala Pier", "210 THB" }
     };
 
     public DonSakPhanganTable() {

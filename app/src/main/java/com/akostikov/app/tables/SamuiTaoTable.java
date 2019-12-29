@@ -9,14 +9,14 @@ public class SamuiTaoTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
 
-            {"Lomprayah", "8:00", "Pralan Pier", "9:30", "Mae Haad Pier", "600 B"},
-            {"Seatran", "8:00", "Bangrak Pier", "10:00", "Mae Haad Pier", "600 B"},
-            {"Lomprayah", "11:15", "Nathon Pier", "14:15", "Mae Haad Pier", "600 B"},
-            {"Songserm", "11:30", "Nathon Pier", "14:00", "Mae Haad Pier", "500 B" },
-            {"Lomprayah", "12:30","Pralan Pier",  "14:15", "Mae Haad Pier", "600 B"},
-            {"Seatran", "13:00", "Bangrak Pier", "15:00", "Mae Haad Pier", "600 B"},
-            {"Seatran", "16:30", "Bangrak Pier", "18:30", "Mae Haad Pier", "600 B"},
-            {"Lomprayah", "17:30", "Nathon Pier", "19:15", "Mae Haad Pier", "700 B"},
+            {"Lomprayah", "8:00", "Pralan Pier", "9:30", "Mae Haad Pier", "600 THB"},
+            {"Seatran", "8:00", "Bangrak Pier", "10:00", "Mae Haad Pier", "600 THB"},
+            {"Lomprayah", "11:15", "Nathon Pier", "14:15", "Mae Haad Pier", "600 THB"},
+            {"Songserm", "11:30", "Nathon Pier", "14:00", "Mae Haad Pier", "500 THB" },
+            {"Lomprayah", "12:30","Pralan Pier",  "14:15", "Mae Haad Pier", "600 THB"},
+            {"Seatran", "13:00", "Bangrak Pier", "15:00", "Mae Haad Pier", "600 THB"},
+            {"Seatran", "16:30", "Bangrak Pier", "18:30", "Mae Haad Pier", "600 THB"},
+            {"Lomprayah", "17:30", "Nathon Pier", "19:15", "Mae Haad Pier", "700 THB"},
     };
 
 

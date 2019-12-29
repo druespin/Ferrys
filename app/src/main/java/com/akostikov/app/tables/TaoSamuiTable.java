@@ -9,13 +9,13 @@ public class TaoSamuiTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
 
-            {"Lomprayah", "6:00", "Mae Haad Pier", "7:50", "Nathon Pier", "700 B"},
-            {"Seatran", "6:30", "Mae Haad Pier", "8:30", "Bangrak Pier", "600 B"},
-            {"Seatran", "9:00", "Mae Haad Pier", "11:00", "Bangrak Pier", "600 B"},
-            {"Lomprayah", "9:30", "Mae Haad Pier", "11:20", "Pralan Pier", "600 B"},
-            {"Songserm", "10:00", "Mae Haad Pier", "13:15", "Nathon Pier", "500 B" },
-            {"Seatran", "15:00", "Mae Haad Pier", "17:30", "Bangrak Pier", "600 B"},
-            {"Lomprayah", "15:00", "Mae Haad Pier", "16:40", "Pralan Pier", "600 B"},
+            {"Lomprayah", "6:00", "Mae Haad Pier", "7:50", "Nathon Pier", "700 THB"},
+            {"Seatran", "6:30", "Mae Haad Pier", "8:30", "Bangrak Pier", "600 THB"},
+            {"Seatran", "9:00", "Mae Haad Pier", "11:00", "Bangrak Pier", "600 THB"},
+            {"Lomprayah", "9:30", "Mae Haad Pier", "11:20", "Pralan Pier", "600 THB"},
+            {"Songserm", "10:00", "Mae Haad Pier", "13:15", "Nathon Pier", "500 THB" },
+            {"Seatran", "15:00", "Mae Haad Pier", "17:30", "Bangrak Pier", "600 THB"},
+            {"Lomprayah", "15:00", "Mae Haad Pier", "16:40", "Pralan Pier", "600 THB"},
     };
 
 

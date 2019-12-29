@@ -12,10 +12,6 @@ import com.akostikov.app.R;
 
 public class MapPageActivity extends AppCompatActivity {
 
-    private ImageView mapView;
-    private Toolbar toolbar;
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -51,29 +47,28 @@ public class MapPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_page);
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mapView = findViewById(R.id.map_view);
-
+        ImageView mapView = findViewById(R.id.map_view);
         String island = getIntent().getExtras().getString("island");
 
         if (island != null)
         {
             switch (island) {
                 case "samui": {
-                    toolbar.setTitle("Koh Samui Map");
+                    toolbar.setTitle("Koh Samui");
                     mapView.setImageResource(R.drawable.samui_map);
                     break;
                 }
                 case "phangan": {
-                    toolbar.setTitle("Koh Phangan Map");
+                    toolbar.setTitle("Koh Phangan");
                     mapView.setImageResource(R.drawable.phangan_map);
                     break;
                 }
                 case "tao": {
-                    toolbar.setTitle("Koh Tao Map");
+                    toolbar.setTitle("Koh Tao");
                     mapView.setImageResource(R.drawable.tao_map);
                     break;
                 }

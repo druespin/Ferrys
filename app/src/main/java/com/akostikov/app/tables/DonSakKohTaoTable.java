@@ -9,8 +9,8 @@ public class DonSakKohTaoTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
 
-            {"Seatran", "11:00", "Seatran Ferry Pier", "15:00", "Mae Haad Pier", "700 B"},
-            {"Seatran", "14:30", "Seatran Ferry Pier", "18:30", "Mae Haad Pier", "700 B"},
+            {"Seatran", "11:00", "Seatran Ferry Pier", "15:00", "Mae Haad Pier", "700 THB"},
+            {"Seatran", "14:30", "Seatran Ferry Pier", "18:30", "Mae Haad Pier", "700 THB"},
 
     };
 

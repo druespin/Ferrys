@@ -9,13 +9,13 @@ public class TaoPhanganTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
 
-            {"Lomprayah", "6:00", "Mae Haad Pier", "7:10", "Thong Sala Pier", "600 B"},
-            {"Seatran", "6:30", "Mae Haad Pier", "8:00", "Thong Sala Pier", "450 B"},
-            {"Seatran", "9:00", "Mae Haad Pier", "10:30", "Thong Sala Pier", "450 B"},
-            {"Lomprayah", "9:30", "Mae Haad Pier", "10:45", "Thong Sala Pier", "500 B"},
-            {"Songserm", "10:00", "Mae Haad Pier", "11:30", "Thong Sala Pier", "350 B" },
-            {"Seatran", "15:00", "Mae Haad Pier", "16:30", "Thong Sala Pier", "450 B"},
-            {"Lomprayah", "15:00", "Mae Haad Pier", "16:10", "Thong Sala Pier", "500 B"},
+            {"Lomprayah", "6:00", "Mae Haad Pier", "7:10", "Thong Sala Pier", "600 THB"},
+            {"Seatran", "6:30", "Mae Haad Pier", "8:00", "Thong Sala Pier", "450 THB"},
+            {"Seatran", "9:00", "Mae Haad Pier", "10:30", "Thong Sala Pier", "450 THB"},
+            {"Lomprayah", "9:30", "Mae Haad Pier", "10:45", "Thong Sala Pier", "500 THB"},
+            {"Songserm", "10:00", "Mae Haad Pier", "11:30", "Thong Sala Pier", "350 THB" },
+            {"Seatran", "15:00", "Mae Haad Pier", "16:30", "Thong Sala Pier", "450 THB"},
+            {"Lomprayah", "15:00", "Mae Haad Pier", "16:10", "Thong Sala Pier", "500 THB"},
     };
 
     public TaoPhanganTable() {

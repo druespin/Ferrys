@@ -8,8 +8,8 @@ import com.akostikov.app.data.FerryContract;
 public class KohTaoDonSakTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
-            {"Seatran", "6:30", "Mae Haad Pier", "10:30", "Seatran Ferry Pier", "700 B"},
-            {"Seatran", "9:00", "Mae Haad Pier", "13:00", "Seatran Ferry Pier", "700 B"},
+            {"Seatran", "6:30", "Mae Haad Pier", "10:30", "Seatran Ferry Pier", "700 THB"},
+            {"Seatran", "9:00", "Mae Haad Pier", "13:00", "Seatran Ferry Pier", "700 THB"},
     };
 
     public KohTaoDonSakTable() {

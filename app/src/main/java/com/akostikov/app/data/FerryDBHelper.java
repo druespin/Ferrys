@@ -43,7 +43,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
     private PhanganTaoTable phanganTao = new PhanganTaoTable();
 
     public FerryDBHelper(Context context)  {
-        super(context, DATABASE_NAME, null, 5);
+        super(context, DATABASE_NAME, null, 6);
     }
 
     @Override
