@@ -57,6 +57,10 @@ public class MapPageActivity extends AppCompatActivity {
         if (island != null)
         {
             switch (island) {
+
+                default: toolbar.setTitle("No map");
+                    break;
+
                 case "samui": {
                     toolbar.setTitle("Koh Samui");
                     mapView.setImageResource(R.drawable.samui_map);

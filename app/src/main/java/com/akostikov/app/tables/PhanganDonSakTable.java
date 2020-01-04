@@ -8,9 +8,9 @@ import com.akostikov.app.data.FerryContract;
 public class PhanganDonSakTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
-            {"Raja", "5:00", "Thong Sala Pier", "7:30", "Raja Ferry Pier", "210 THB"},
-            {"Raja", "7:00", "Thong Sala Pier", "9:30", "Raja Ferry Pier", "210 THB"},
-            {"Seatran", "8:00", "Thong Sala Pier", "10:30", "Seatran Ferry Pier", "450 THB" },
+            {"Raja", "05:00", "Thong Sala Pier", "07:30", "Raja Ferry Pier", "210 THB"},
+            {"Raja", "07:00", "Thong Sala Pier", "09:30", "Raja Ferry Pier", "210 THB"},
+            {"Seatran", "08:00", "Thong Sala Pier", "10:30", "Seatran Ferry Pier", "450 THB" },
             {"Seatran", "10:30", "Thong Sala Pier", "13:00", "Seatran Ferry Pier", "450 THB" },
             {"Raja", "11:00", "Thong Sala Pier", "13:30", "Raja Ferry Pier", "210 THB"},
             {"Raja", "13:00", "Thong Sala Pier", "15:30", "Raja Ferry Pier", "210 THB"},

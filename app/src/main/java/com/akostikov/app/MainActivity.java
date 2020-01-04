@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             else {
 
                 Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
-                intent.putExtra("dep",departure);
+                intent.putExtra("dep", departure);
                 intent.putExtra("arr", arrival);
                 startActivity(intent);
             }

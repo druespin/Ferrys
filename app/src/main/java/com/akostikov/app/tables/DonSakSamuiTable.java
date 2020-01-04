@@ -8,9 +8,9 @@ import com.akostikov.app.data.FerryContract;
 public class DonSakSamuiTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
-            { "Raja", "7:00", "Raja Ferry Pier", "8:30", "Lipa Noi Pier", "140 THB"},
-            { "Raja", "8:00", "Raja Ferry Pier", "9:30", "Lipa Noi Pier", "140 THB"},
-            { "Raja", "9:00", "Raja Ferry Pier", "10:30", "Lipa Noi Pier", "140 THB"},
+            { "Raja", "07:00", "Raja Ferry Pier", "08:30", "Lipa Noi Pier", "140 THB"},
+            { "Raja", "08:00", "Raja Ferry Pier", "09:30", "Lipa Noi Pier", "140 THB"},
+            { "Raja", "09:00", "Raja Ferry Pier", "10:30", "Lipa Noi Pier", "140 THB"},
             { "Raja", "10:00", "Raja Ferry Pier", "11:30", "Lipa Noi Pier", "140 THB"},
             { "Raja", "11:00", "Raja Ferry Pier", "12:30", "Lipa Noi Pier", "140 THB"},
             { "Seatran", "11:00", "Seatran Ferry Pier", "12:30", "Bangrak Pier", "350 THB" },

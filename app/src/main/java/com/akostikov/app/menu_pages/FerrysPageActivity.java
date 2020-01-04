@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.akostikov.app.R;
 
-public class FerrysPageActivity extends AppCompatActivity {
+public class FerrysPageActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
@@ -47,5 +49,50 @@ public class FerrysPageActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ImageView rajaLogo = findViewById(R.id.raja_logo);
+        ImageView lompayahLogo = findViewById(R.id.lomprayah_logo);
+        ImageView seatranLogo = findViewById(R.id.seatran_logo);
+        ImageView songsermLogo = findViewById(R.id.songserm_logo);
+        ImageView haadrinLogo = findViewById(R.id.haadrin_logo);
+
+        rajaLogo.setOnClickListener(this);
+        lompayahLogo.setOnClickListener(this);
+        seatranLogo.setOnClickListener(this);
+        songsermLogo.setOnClickListener(this);
+        haadrinLogo.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.raja_logo: {
+                startFerryDetailsActivity("raja");
+                break;
+            }
+            case R.id.lomprayah_logo: {
+                startFerryDetailsActivity("lomprayah");
+                break;
+            }
+            case R.id.seatran_logo: {
+                startFerryDetailsActivity("seatran");
+                break;
+            }
+            case R.id.songserm_logo: {
+                startFerryDetailsActivity("songserm");
+                break;
+            }
+            case R.id.haadrin_logo: {
+                startFerryDetailsActivity("haadrin");
+                break;
+            }
+        }
+    }
+
+    void startFerryDetailsActivity(String ferryType)   {
+        Intent intent = new Intent(getApplicationContext(), FerryDetailActivity.class);
+        intent.putExtra("ferry", ferryType);
+        startActivity(intent);
     }
 }
+

@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <!-- Lomprayah -->
+        <!-- Raja -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,15 +34,15 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/raja_logo"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/lomprayah" />
+                app:srcCompat="@drawable/raja" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="12dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -51,18 +51,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="@string/lomprayah" />
+                    android:text="@string/raja" />
 
                 <TextView
-                    android:id="@+id/lmpr_routes"
                     style="@android:style/Widget.Material.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lomprayah_routes" />
+                    android:text="@string/raja_routes" />
             </LinearLayout>
         </LinearLayout>
 
-            <!-- Raja -->
+            <!-- Lomprayah -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,15 +71,15 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/lomprayah_logo"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    tools:srcCompat="@drawable/raja" />
+                    app:srcCompat="@drawable/lomprayah" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -89,14 +88,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="@string/raja" />
+                        android:text="@string/lomprayah" />
 
                     <TextView
-                        android:id="@+id/raja_routes"
                         style="@android:style/Widget.Material.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/raja_routes" />
+                        android:text="@string/lomprayah_routes" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -110,7 +108,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/seatran_logo"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     app:srcCompat="@drawable/seatran" />
@@ -118,7 +116,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -130,7 +128,6 @@
                         android:text="@string/seatran" />
 
                     <TextView
-                        android:id="@+id/strn_routes"
                         style="@android:style/Widget.Material.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -147,7 +144,7 @@
                 android:layout_marginBottom="16dp">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/songserm_logo"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     app:srcCompat="@drawable/songserm" />
@@ -155,7 +152,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -167,7 +164,6 @@
                         android:text="@string/songserm" />
 
                     <TextView
-                        android:id="@+id/sngsrm_routes"
                         style="@android:style/Widget.Material.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -175,7 +171,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- HQ -->
+            <!-- Haadrin Queen -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -184,7 +180,7 @@
                 android:layout_marginBottom="16dp">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/haadrin_logo"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     app:srcCompat="@drawable/haadrin_queen" />
@@ -192,11 +188,11 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv"
+                        android:id="@+id/tv5"
                         style="@style/PierStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -204,7 +200,6 @@
                         android:text="@string/haadrin_queen" />
 
                     <TextView
-                        android:id="@+id/hdrn_routes"
                         style="@android:style/Widget.Material.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

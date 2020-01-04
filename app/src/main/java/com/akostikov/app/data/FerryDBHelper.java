@@ -43,7 +43,7 @@ public class FerryDBHelper extends SQLiteOpenHelper {
     private PhanganTaoTable phanganTao = new PhanganTaoTable();
 
     public FerryDBHelper(Context context)  {
-        super(context, DATABASE_NAME, null, 6);
+        super(context, DATABASE_NAME, null, 7);
     }
 
     @Override
@@ -113,40 +113,40 @@ public class FerryDBHelper extends SQLiteOpenHelper {
 
         String tableName = "name";
 
-        if (departure.equals("Don Sak") && arrival.equals("Samui"))
+        if (departure.equals("Don Sak") && arrival.equals("Ko Samui"))
             tableName = donSakSamui.getTableName();
 
-        if (departure.equals("Samui") && arrival.equals("Don Sak"))
+        if (departure.equals("Ko Samui") && arrival.equals("Don Sak"))
             tableName = samuiDonSak.getTableName();
 
-        if (departure.equals("Don Sak") && arrival.equals("Phangan"))
+        if (departure.equals("Don Sak") && arrival.equals("Ko Phangan"))
             tableName = donSakPhangan.getTableName();
 
-        if (departure.equals("Phangan") && arrival.equals("Don Sak"))
+        if (departure.equals("Ko Phangan") && arrival.equals("Don Sak"))
             tableName = phanganDonSak.getTableName();
 
-        if (departure.equals("Don Sak") && arrival.equals("Koh Tao"))
+        if (departure.equals("Don Sak") && arrival.equals("Ko Tao"))
             tableName = donSakTao.getTableName();
 
-        if (departure.equals("Koh Tao") && arrival.equals("Don Sak"))
+        if (departure.equals("Ko Tao") && arrival.equals("Don Sak"))
             tableName = taoDonSak.getTableName();
 
-        if (departure.equals("Samui") && arrival.equals("Phangan"))
+        if (departure.equals("Ko Samui") && arrival.equals("Ko Phangan"))
             tableName = samuiPhangan.getTableName();
 
-        if (departure.equals("Phangan") && arrival.equals("Samui"))
+        if (departure.equals("Ko Phangan") && arrival.equals("Ko Samui"))
             tableName = phanganSamui.getTableName();
 
-        if (departure.equals("Samui") && arrival.equals("Koh Tao"))
+        if (departure.equals("Ko Samui") && arrival.equals("Ko Tao"))
             tableName = samuiTao.getTableName();
 
-        if (departure.equals("Koh Tao") && arrival.equals("Samui"))
+        if (departure.equals("Ko Tao") && arrival.equals("Ko Samui"))
             tableName = taoSamui.getTableName();
 
-        if (departure.equals("Phangan") && arrival.equals("Koh Tao"))
+        if (departure.equals("Ko Phangan") && arrival.equals("Ko Tao"))
             tableName = phanganTao.getTableName();
 
-        if (departure.equals("Koh Tao") && arrival.equals("Phangan"))
+        if (departure.equals("Ko Tao") && arrival.equals("Ko Phangan"))
             tableName = taoPhangan.getTableName();
 
         Log.d("MYLOG", tableName);

@@ -9,8 +9,8 @@ public class PhanganTaoTable extends FerryContract {
 
     private static String[][] SCHEDULE = {
 
-            {"Lomprayah", "8:30", "Thong Sala Pier", "9:30", "Mae Haad Pier", "500 THB"},
-            {"Seatran", "8:30", "Thong Sala Pier", "10:00", "Mae Haad Pier", "450 THB"},
+            {"Lomprayah", "08:30", "Thong Sala Pier", "09:30", "Mae Haad Pier", "500 THB"},
+            {"Seatran", "08:30", "Thong Sala Pier", "10:00", "Mae Haad Pier", "450 THB"},
             {"Songserm", "12:30", "Thong Sala Pier", "14:00", "Mae Haad Pier", "350 THB" },
             {"Lomprayah", "13:00", "Thong Sala Pier", "14:15", "Mae Haad Pier", "500 THB"},
             {"Seatran", "13:30", "Thong Sala Pier", "15:00", "Mae Haad Pier", "450 THB"},

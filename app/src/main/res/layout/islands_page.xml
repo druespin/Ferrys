@@ -39,7 +39,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="@string/koh_samui_map" />
+                        android:text="@string/ko_samui_map" />
 
                     <TextView
                         android:id="@+id/samui_text"
@@ -68,7 +68,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="@string/koh_phangan_map" />
+                        android:text="@string/ko_phangan_map" />
 
                     <TextView
                         android:id="@+id/phangan_text"
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="@string/koh_tao_map" />
+                        android:text="@string/ko_tao_map" />
 
                     <TextView
                         android:id="@+id/tao_text"

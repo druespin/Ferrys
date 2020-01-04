@@ -24,7 +24,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="12dp"
         android:text="@string/about_text_1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
         android:id="@+id/github_link"
@@ -47,7 +47,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         android:text="@string/about_text_2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <FrameLayout
         android:id="@+id/github_view"
