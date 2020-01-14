@@ -5,7 +5,6 @@ Koh Samui, Koh Phangan and Koh Tao.
 
 ![screen-1](https://github.com/druespin/Ferrys/blob/master/app/src/main/res/drawable/screen-1.png)
 ![screen-2](https://github.com/druespin/Ferrys/blob/master/app/src/main/res/drawable/screen-2.png)
-![screen-3](https://github.com/druespin/Ferrys/blob/master/app/src/main/res/drawable/screen_3.png)
 
 ## Requirements
 
