@@ -9,8 +9,8 @@ Koh Samui, Koh Phangan and Koh Tao.
 
 ## Requirements
 
-- Language: Java (JDK 8+)
-- IDE: Android Studio 3+
+- JDK 1.8 or higher
+- Android Studio 3+
 
 ## Installation
 
