@@ -20,8 +20,9 @@ Koh Samui, Koh Phangan and Koh Tao.
  
  - Android Studio
   1. Checkout from Version Control > Git
-  2. URL: https://github.com/druespin/Ferrys
-     Directory: path/to/the/project/folder
+  2. Populate fields in the dialog window
+       * URL: https://github.com/druespin/Ferrys
+       * Directory: path/to/the/project/folder
   3. Click Clone button
   
   ## Build & Run
