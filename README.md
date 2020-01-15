@@ -15,7 +15,7 @@ Koh Samui, Koh Phangan and Koh Tao.
 
 - Git console
  1.  cd path/to/the/project/folder
- 2.  git clone git@github.com:/druespin/Ferrys.git
+ 2.  git clone https://github.com/druespin/Ferrys.git
  
  - Android Studio
   1. Checkout from Version Control > Git
