@@ -1,10 +1,9 @@
 package com.akostikov.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,18 +11,43 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.akostikov.app.menu_pages.FerrysPageActivity;
 import com.akostikov.app.menu_pages.InfoPageActivity;
 import com.akostikov.app.menu_pages.IslandsPageActivity;
+import com.akostikov.app.presenter.MainPresenter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
-    String departure, arrival;
-    Spinner spin1, spin2;
-    Button btnSearch;
+    private String departure, arrival;
+    private Spinner spin1, spin2;
+    private final MainPresenter mvp = new MainPresenter(MainActivity.this);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.main_menu);
+
+        spin1 = findViewById(R.id.spinner1);
+        spin2 = findViewById(R.id.spinner2);
+        Button btnSearch = findViewById(R.id.search);
+
+        // Invoke method to get departure and arrival from spinners
+        setupSpinner();
+
+        // Click 'Search' button
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                mvp.checkSpinners(departure, arrival);
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId())
         {
-
             default: return false;
 
             case R.id.ferry_companies: {
@@ -55,53 +78,6 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(intent);
         return true;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        // Inflate a menu to be displayed in the toolbar
-        // toolbar.inflateMenu(R.menu.main_menu);
-
-        spin1 = findViewById(R.id.spinner1);
-        spin2 = findViewById(R.id.spinner2);
-        btnSearch = findViewById(R.id.search);
-
-        // Invoke method to get departure and arrival from spinners
-        setupSpinner();
-
-        // Click 'Search' button
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick (View v){
-
-            if (departure.equals("- DEPARTURE -")) {
-                Toast.makeText(getApplicationContext(), "Departure not selected", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (arrival.equals("- ARRIVAL -")) {
-                Toast.makeText(getApplicationContext(), "Arrival not selected", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (departure.equals(arrival))  {
-                Toast.makeText(getApplicationContext(), "Try again please", Toast.LENGTH_SHORT).show();
-            }
-
-            else {
-
-                Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
-                intent.putExtra("dep", departure);
-                intent.putExtra("arr", arrival);
-                startActivity(intent);
-            }
-
-        }
-    });
     }
 
 
@@ -136,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                arrival = spin2.getSelectedItem().toString();
+                arrival = parent.getSelectedItem().toString();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

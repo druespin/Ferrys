@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ferrys</string>
+    <string name="app_name">Siam Ferrys</string>
 
     <string-array name="departure_items">
         <item>- DEPARTURE -</item>
@@ -25,7 +25,7 @@
 
     <string name="search">SEARCH</string>
 
-    <string name="ferrytime">FERRYS</string>
+    <string name="ferrytime">SIAM FERRYS</string>
 
     <!-- Menu values -->
     <string name="ferry_companies">Ferries</string>

@@ -1,4 +1,4 @@
-package com.akostikov.app.data;
+package com.akostikov.app.sqlite;
 
 import android.provider.BaseColumns;
 

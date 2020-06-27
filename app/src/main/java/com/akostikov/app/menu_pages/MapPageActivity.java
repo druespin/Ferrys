@@ -1,16 +1,17 @@
 package com.akostikov.app.menu_pages;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.akostikov.app.R;
 
-public class MapPageActivity extends AppCompatActivity {
+public class MapPageActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,8 +49,6 @@ public class MapPageActivity extends AppCompatActivity {
         setContentView(R.layout.map_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ImageView mapView = findViewById(R.id.map_view);
         String island = getIntent().getExtras().getString("island");

@@ -1,17 +1,17 @@
 package com.akostikov.app.menu_pages;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.Toolbar;
 import com.akostikov.app.R;
 
-public class FerrysPageActivity extends AppCompatActivity implements View.OnClickListener {
+public class FerrysPageActivity extends Activity implements View.OnClickListener {
 
 
     @Override
@@ -46,8 +46,7 @@ public class FerrysPageActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.ferrys_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.inflateMenu(R.menu.menu_for_ferrys_page);
 
         ImageView rajaLogo = findViewById(R.id.raja_logo);
         ImageView lompayahLogo = findViewById(R.id.lomprayah_logo);

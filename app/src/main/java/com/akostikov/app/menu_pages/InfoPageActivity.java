@@ -1,5 +1,6 @@
 package com.akostikov.app.menu_pages;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -7,23 +8,20 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.customtabs.CustomTabsIntent;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.browser.customtabs.CustomTabsIntent;
+
 import com.akostikov.app.R;
-import java.util.logging.Logger;
 
 
-public class InfoPageActivity extends AppCompatActivity {
+public class InfoPageActivity extends Activity {
 
     private TextView github;
 
@@ -59,8 +57,10 @@ public class InfoPageActivity extends AppCompatActivity {
         setContentView(R.layout.info_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.inflateMenu(R.menu.menu_for_info_page);
+
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         github = findViewById(R.id.github_link);
         registerForContextMenu(github);

@@ -1,18 +1,19 @@
 package com.akostikov.app.menu_pages;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.akostikov.app.R;
 
 
-public class IslandsPageActivity extends AppCompatActivity implements View.OnClickListener {
+public class IslandsPageActivity extends Activity implements View.OnClickListener {
 
     private TextView tv_samui, tv_phangan, tv_tao;
     private TextView samuiText, phanganText, taoText;
@@ -49,8 +50,7 @@ public class IslandsPageActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.islands_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.inflateMenu(R.menu.menu_for_islands_page);
 
         tv_samui = findViewById(R.id.tv_samui);
         tv_phangan = findViewById(R.id.tv_phangan);

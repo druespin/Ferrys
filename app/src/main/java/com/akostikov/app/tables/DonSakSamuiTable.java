@@ -2,7 +2,7 @@ package com.akostikov.app.tables;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
-import com.akostikov.app.data.FerryContract;
+import com.akostikov.app.sqlite.FerryContract;
 
 
 public class DonSakSamuiTable extends FerryContract {

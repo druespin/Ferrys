@@ -1,4 +1,4 @@
-package com.akostikov.app.data;
+package com.akostikov.app.sqlite;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.akostikov.app.ListItem;
 import com.akostikov.app.R;
+import com.akostikov.app.model.ListItem;
 import com.akostikov.app.tables.DonSakKohTaoTable;
 import com.akostikov.app.tables.DonSakPhanganTable;
 import com.akostikov.app.tables.DonSakSamuiTable;

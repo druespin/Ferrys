@@ -1,4 +1,4 @@
-package com.akostikov.app;
+package com.akostikov.app.model;
 
 
 public class ListItem {

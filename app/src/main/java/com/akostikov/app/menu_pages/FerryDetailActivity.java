@@ -1,17 +1,18 @@
 package com.akostikov.app.menu_pages;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.akostikov.app.R;
 
-public class FerryDetailActivity extends AppCompatActivity {
+public class FerryDetailActivity extends Activity {
 
 
     @Override
@@ -46,8 +47,10 @@ public class FerryDetailActivity extends AppCompatActivity {
         setContentView(R.layout.ferry_details);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.inflateMenu(R.menu.main_menu);
+
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ImageView ferryImage = findViewById(R.id.ferry_image);
         TextView ferryText = findViewById(R.id.ferry_text);
