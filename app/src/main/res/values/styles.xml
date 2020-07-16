@@ -1,18 +1,19 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="FerryAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
     </style>
 
-    <style name="ToolbarStyle">
+    <style name="ToolbarStyle" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:background">#3F88A8</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:textColor">#FFF</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item>
     </style>
 
     <style name="FerryLogoStyle">
@@ -55,17 +56,17 @@
         <item name="android:colorControlHighlight">#69e</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#fff</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="SpinnerStyle">
         <item name="android:background">@drawable/spinner</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
-    <style name="Ferrys" parent="android:Theme.Holo.Light.NoActionBar" >
-        <item name="android:colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/background_holo_light</item>
-    </style>
 
 </resources>

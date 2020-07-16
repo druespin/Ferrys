@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.akostikov.app.R;
 
-public class MapPageActivity extends Activity {
+public class MapPageActivity extends Activity implements Toolbar.OnMenuItemClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -20,7 +20,7 @@ public class MapPageActivity extends Activity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         Intent intent;
         switch (item.getItemId())
         {
@@ -49,6 +49,8 @@ public class MapPageActivity extends Activity {
         setContentView(R.layout.map_page);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.main_menu);
+        toolbar.setOnMenuItemClickListener(this);
 
         ImageView mapView = findViewById(R.id.map_view);
         String island = getIntent().getExtras().getString("island");

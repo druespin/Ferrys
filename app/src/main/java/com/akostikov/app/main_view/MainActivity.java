@@ -1,4 +1,4 @@
-package com.akostikov.app;
+package com.akostikov.app.main_view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,19 +11,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
+import com.akostikov.app.R;
 import com.akostikov.app.menu_pages.FerrysPageActivity;
 import com.akostikov.app.menu_pages.InfoPageActivity;
 import com.akostikov.app.menu_pages.IslandsPageActivity;
-import com.akostikov.app.presenter.MainPresenter;
+import com.akostikov.app.results_view.ResultsActivity;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements Toolbar.OnMenuItemClickListener {
 
     private String departure, arrival;
     private Spinner spin1, spin2;
-    private final MainPresenter mvp = new MainPresenter(MainActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +34,19 @@ public class MainActivity extends Activity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
+        toolbar.setOnMenuItemClickListener(this);
 
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
         Button btnSearch = findViewById(R.id.search);
 
-        // Invoke method to get departure and arrival from spinners
+        // Get departure and arrival from spinners
         setupSpinner();
 
-        // Click 'Search' button
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v){
-                mvp.checkSpinners(departure, arrival);
-            }
+        btnSearch.setOnClickListener(v -> {
+            checkSpinners(departure, arrival);
         });
+
     }
 
     @Override
@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         Intent intent;
 
         switch (item.getItemId())
@@ -80,6 +80,29 @@ public class MainActivity extends Activity {
         return true;
     }
 
+
+    private void checkSpinners(String departure, String arrival) {
+
+        if (departure.equals("- DEPARTURE -")) {
+            Toast.makeText(this, "Departure not selected", Toast.LENGTH_SHORT).show();
+        }
+
+        else if (arrival.equals("- ARRIVAL -")) {
+            Toast.makeText(this, "Arrival not selected", Toast.LENGTH_SHORT).show();
+        }
+
+        else if (departure.equals(arrival))  {
+            Toast.makeText(this, "Departure and Arrival should not match",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        else {
+            Intent intent = new Intent(this, ResultsActivity.class);
+            intent.putExtra("dep", departure);
+            intent.putExtra("arr", arrival);
+            startActivity(intent);
+        }
+    }
 
     private void setupSpinner() {
 

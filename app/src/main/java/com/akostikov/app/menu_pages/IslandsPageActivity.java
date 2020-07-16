@@ -13,7 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 import com.akostikov.app.R;
 
 
-public class IslandsPageActivity extends Activity implements View.OnClickListener {
+public class IslandsPageActivity extends Activity implements View.OnClickListener,
+                                                            Toolbar.OnMenuItemClickListener{
 
     private TextView tv_samui, tv_phangan, tv_tao;
     private TextView samuiText, phanganText, taoText;
@@ -25,7 +26,7 @@ public class IslandsPageActivity extends Activity implements View.OnClickListene
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         Intent intent;
         switch (item.getItemId())
         {
@@ -51,6 +52,8 @@ public class IslandsPageActivity extends Activity implements View.OnClickListene
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu_for_islands_page);
+        toolbar.setTitle(R.string.islands);
+        toolbar.setOnMenuItemClickListener(this);
 
         tv_samui = findViewById(R.id.tv_samui);
         tv_phangan = findViewById(R.id.tv_phangan);
@@ -70,40 +73,41 @@ public class IslandsPageActivity extends Activity implements View.OnClickListene
     }
 
     @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_samui: {
-                    startMapPageActivity("samui");
-                    break;
-                }
-                case R.id.tv_phangan: {
-                    startMapPageActivity("phangan");
-                    break;
-                }
-                case R.id.tv_tao: {
-                    startMapPageActivity("tao");
-                    break;
-                }
+    public void onClick(View v) {
+        String island = null;
 
-                case R.id.samui_text: {
-                    expandCollapseInfo(samuiText);
-                    break;
-                }
-                case R.id.phangan_text: {
-                    expandCollapseInfo(phanganText);
-                    break;
-                }
-                case R.id.tao_text: {
-                    expandCollapseInfo(taoText);
-                    break;
-                }
+        switch (v.getId()) {
+            case R.id.tv_samui: {
+                island = "samui";
+                break;
             }
-    }
+            case R.id.tv_phangan: {
+                island = "phangan";
+                break;
+            }
+            case R.id.tv_tao: {
+                island = "tao";
+                break;
+            }
 
-    void startMapPageActivity(String island)   {
-        Intent intent = new Intent(getApplicationContext(), MapPageActivity.class);
-        intent.putExtra("island", island);
-        startActivity(intent);
+            case R.id.samui_text: {
+                expandCollapseInfo(samuiText);
+                break;
+            }
+            case R.id.phangan_text: {
+                expandCollapseInfo(phanganText);
+                break;
+            }
+            case R.id.tao_text: {
+                expandCollapseInfo(taoText);
+                break;
+            }
+        }
+        if (island != null) {
+            Intent intent = new Intent(this, MapPageActivity.class);
+            intent.putExtra("island", island);
+            startActivity(intent);
+        }
     }
 
     void expandCollapseInfo(TextView tv)   {

@@ -1,15 +1,22 @@
 package com.akostikov.app.model;
 
 
-public class ListItem {
+public class ListItem implements Item {
 
-    private int boatLogo;
-    private String pierDepart, pierArrive, timeDepart, timeArrive, price;
+    private String departure, arrival, boat,
+            pierDepart, pierArrive,
+            timeDepart, timeArrive,
+            price;
 
-    public ListItem(int boatLogo, String timeDepart, String pierDepart, String timeArrive,
-                    String pierArrive, String price)  {
+    public ListItem(String departure, String arrival,
+                    String boat,
+                    String timeDepart, String pierDepart,
+                    String timeArrive, String pierArrive,
+                    String price)  {
 
-        this.boatLogo = boatLogo;
+        this.departure = departure;
+        this.arrival = arrival;
+        this.boat = boat;
         this.timeDepart = timeDepart;
         this.timeArrive = timeArrive;
         this.pierArrive = pierArrive;
@@ -17,9 +24,9 @@ public class ListItem {
         this.price = price;
     }
 
-    public int getBoatLogo() {
-        return boatLogo;
-    }
+    public String getDeparture() { return departure; }
+    public String getArrival() { return arrival; }
+    public String getBoat() { return boat; }
     public String getTimeDepart() { return timeDepart; }
     public String getPierDepart() {return pierDepart; }
     public String getTimeArrive() {

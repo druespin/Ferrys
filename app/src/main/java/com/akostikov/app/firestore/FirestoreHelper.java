@@ -7,23 +7,15 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.akostikov.app.firestore.InitialTableData.DONSAK_KOTAO;
-import static com.akostikov.app.firestore.InitialTableData.DONSAK_PHANGAN;
-import static com.akostikov.app.firestore.InitialTableData.DONSAK_SAMUI;
-
 
 public class FirestoreHelper {
 
     private FirebaseFirestore fbfs = FirebaseFirestore.getInstance();
 
     public void populateFirestore()  {
-        this.populateTemplate("DonSakKoTao", DONSAK_KOTAO);
-        this.populateTemplate("DonSakPhangan", DONSAK_PHANGAN);
-        this.populateTemplate("DonSakSamui", DONSAK_SAMUI);
     }
 
-    public void populateTemplate(String tableName, String[][] schedule) {
-
+    private void populateTemplate(String tableName, String[][] schedule) {
         int boatLogo = 0;
 
         for (int i = 0; i < schedule.length; i++) {
@@ -50,5 +42,9 @@ public class FirestoreHelper {
                         .set(mappedDoc);
             }
         }
+    }
+
+    public FirebaseFirestore getFirestoreDb() {
+        return fbfs;
     }
 }

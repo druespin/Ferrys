@@ -25,7 +25,7 @@
 
     <string name="search">SEARCH</string>
 
-    <string name="ferrytime">SIAM FERRYS</string>
+    <string name="ferry_title">SIAM FERRYS</string>
 
     <!-- Menu values -->
     <string name="ferry_companies">Ferries</string>
@@ -81,5 +81,6 @@ The island is well known for scuba diving and snorkeling, as well as hiking, roc
 
 
     <string name="map">Map</string>
+    <string name="empty">empty</string>
 
 </resources>

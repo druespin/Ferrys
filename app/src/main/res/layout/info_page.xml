@@ -9,10 +9,6 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/ToolbarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:textAlignment="textStart"
-        android:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:visibility="visible" />
 
     <TextView

@@ -11,8 +11,31 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.Toolbar;
 import com.akostikov.app.R;
 
-public class FerrysPageActivity extends Activity implements View.OnClickListener {
+public class FerrysPageActivity extends Activity implements View.OnClickListener,
+                                                            Toolbar.OnMenuItemClickListener{
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ferrys_page);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu_for_ferrys_page);
+        toolbar.setTitle(R.string.ferry_companies);
+        toolbar.setOnMenuItemClickListener(this);
+
+        ImageView rajaLogo = findViewById(R.id.raja_logo);
+        ImageView lomprayahLogo = findViewById(R.id.lomprayah_logo);
+        ImageView seatranLogo = findViewById(R.id.seatran_logo);
+        ImageView songsermLogo = findViewById(R.id.songserm_logo);
+        ImageView haadrinLogo = findViewById(R.id.haadrin_logo);
+
+        rajaLogo.setOnClickListener(this);
+        lomprayahLogo.setOnClickListener(this);
+        seatranLogo.setOnClickListener(this);
+        songsermLogo.setOnClickListener(this);
+        haadrinLogo.setOnClickListener(this);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -21,10 +44,10 @@ public class FerrysPageActivity extends Activity implements View.OnClickListener
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         Intent intent;
-        switch (item.getItemId()) {
 
+        switch (item.getItemId()) {
             default: return super.onOptionsItemSelected(item);
 
             case R.id.info: {
@@ -40,58 +63,41 @@ public class FerrysPageActivity extends Activity implements View.OnClickListener
         return true;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ferrys_page);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.menu_for_ferrys_page);
-
-        ImageView rajaLogo = findViewById(R.id.raja_logo);
-        ImageView lompayahLogo = findViewById(R.id.lomprayah_logo);
-        ImageView seatranLogo = findViewById(R.id.seatran_logo);
-        ImageView songsermLogo = findViewById(R.id.songserm_logo);
-        ImageView haadrinLogo = findViewById(R.id.haadrin_logo);
-
-        rajaLogo.setOnClickListener(this);
-        lompayahLogo.setOnClickListener(this);
-        seatranLogo.setOnClickListener(this);
-        songsermLogo.setOnClickListener(this);
-        haadrinLogo.setOnClickListener(this);
-    }
 
     @Override
     public void onClick(View v) {
+        String ferryType;
 
         switch (v.getId()) {
+            default: return;
+
             case R.id.raja_logo: {
-                startFerryDetailsActivity("raja");
+                ferryType ="raja";
                 break;
             }
             case R.id.lomprayah_logo: {
-                startFerryDetailsActivity("lomprayah");
+                ferryType ="lomprayah";
                 break;
             }
             case R.id.seatran_logo: {
-                startFerryDetailsActivity("seatran");
+                ferryType = "seatran";
                 break;
             }
             case R.id.songserm_logo: {
-                startFerryDetailsActivity("songserm");
+                ferryType = "songserm";
                 break;
             }
             case R.id.haadrin_logo: {
-                startFerryDetailsActivity("haadrin");
+                ferryType = "haadrin";
                 break;
             }
         }
+        if (ferryType != null) {
+            Intent intent = new Intent(getApplicationContext(), FerryDetailActivity.class);
+            intent.putExtra("ferry", ferryType);
+            startActivity(intent);
+        }
     }
 
-    void startFerryDetailsActivity(String ferryType)   {
-        Intent intent = new Intent(getApplicationContext(), FerryDetailActivity.class);
-        intent.putExtra("ferry", ferryType);
-        startActivity(intent);
-    }
 }
 

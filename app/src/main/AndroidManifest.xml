@@ -6,12 +6,13 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".FerrysApp"
         android:allowBackup="true"
         android:icon="@mipmap/icon_start"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_start"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/FerryAppTheme">
 
         <activity
             android:name="com.akostikov.app.StartActivity">
@@ -22,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.akostikov.app.MainActivity">
+            android:name="com.akostikov.app.main_view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -30,8 +31,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.akostikov.app.ResultsActivity"
-            android:parentActivityName="com.akostikov.app.MainActivity"
+        <activity android:name="com.akostikov.app.results_view.ResultsActivity"
+            android:parentActivityName="com.akostikov.app.main_view.MainActivity"
             android:label="@string/search_results">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -42,7 +43,7 @@
 
         <activity
             android:name="com.akostikov.app.menu_pages.FerrysPageActivity"
-            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:parentActivityName="com.akostikov.app.main_view.MainActivity"
             android:label="@string/ferry_companies">
         </activity>
 
@@ -53,7 +54,7 @@
 
         <activity
             android:name="com.akostikov.app.menu_pages.IslandsPageActivity"
-            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:parentActivityName="com.akostikov.app.main_view.MainActivity"
             android:label="@string/islands">
         </activity>
 
@@ -64,7 +65,7 @@
 
         <activity
             android:name="com.akostikov.app.menu_pages.InfoPageActivity"
-            android:parentActivityName="com.akostikov.app.MainActivity"
+            android:parentActivityName="com.akostikov.app.main_view.MainActivity"
             android:label="@string/about_title">
         </activity>
     </application>

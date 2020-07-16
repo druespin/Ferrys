@@ -12,34 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.akostikov.app.R;
 
-public class FerryDetailActivity extends Activity {
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_for_ferrys_page, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-
-            default: return super.onOptionsItemSelected(item);
-
-            case R.id.info: {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
-            case R.id.islands: {
-                intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
-        }
-        startActivity(intent);
-        return true;
-    }
+public class FerryDetailActivity extends Activity implements Toolbar.OnMenuItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +21,7 @@ public class FerryDetailActivity extends Activity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
-
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setOnMenuItemClickListener(this);
 
         ImageView ferryImage = findViewById(R.id.ferry_image);
         TextView ferryText = findViewById(R.id.ferry_text);
@@ -85,4 +56,31 @@ public class FerryDetailActivity extends Activity {
             }
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_for_ferrys_page, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+
+            default: return super.onOptionsItemSelected(item);
+
+            case R.id.info: {
+                intent = new Intent(this, InfoPageActivity.class);
+                break;
+            }
+            case R.id.islands: {
+                intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+        }
+        startActivity(intent);
+        return true;
+    }
+
 }
