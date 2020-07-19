@@ -2,7 +2,7 @@
     <string name="app_name">Siam Ferrys</string>
 
     <string-array name="departure_items">
-        <item>- DEPARTURE -</item>
+        <item>SELECT DEPARTURE</item>
         <item>Don Sak</item>
         <item>Ko Samui</item>
         <item>Ko Phangan</item>
@@ -10,7 +10,7 @@
     </string-array>
 
     <string-array name="arrival_items">
-        <item>- ARRIVAL -</item>
+        <item>SELECT ARRIVAL</item>
         <item>Don Sak</item>
         <item>Ko Samui</item>
         <item>Ko Phangan</item>
@@ -82,5 +82,6 @@ The island is well known for scuba diving and snorkeling, as well as hiking, roc
 
     <string name="map">Map</string>
     <string name="empty">empty</string>
+    <string name="app_logo">app_logo</string>
 
 </resources>

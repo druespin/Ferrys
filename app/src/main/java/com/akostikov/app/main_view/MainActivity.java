@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
 
     private String departure, arrival;
     private Spinner spin1, spin2;
+    private ArrayAdapter spinAdapter1, spinAdapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,56 +41,32 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
 
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
-        Button btnSearch = findViewById(R.id.search);
+        ImageView swapFields = findViewById(R.id.swap_fields);
+        Button btnSearch = findViewById(R.id.search_btn);
 
-        // Get departure and arrival from spinners
-        setupSpinner();
+        setupSpinners();
 
-        btnSearch.setOnClickListener(v -> {
-            checkSpinners(departure, arrival);
+        swapFields.setOnClickListener(v -> {
+            if (departure != null && arrival != null) {
+                int swap = spin1.getSelectedItemPosition();
+                spin1.setSelection(spin2.getSelectedItemPosition());
+                spin2.setSelection(swap);
+            }
         });
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        Intent intent;
-
-        switch (item.getItemId())
-        {
-            default: return false;
-
-            case R.id.ferry_companies: {
-                intent = new Intent(this, FerrysPageActivity.class);
-                break;
-            }
-            case R.id.islands:  {
-                intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
-            case R.id.info:  {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
-        }
-        startActivity(intent);
-        return true;
+        btnSearch.setOnClickListener(v -> doSearch(departure, arrival));
     }
 
 
-    private void checkSpinners(String departure, String arrival) {
+    private void doSearch(String departure, String arrival) {
 
-        if (departure.equals("- DEPARTURE -")) {
+        setupSpinners();
+
+        if (departure.equals("SELECT DEPARTURE")) {
             Toast.makeText(this, "Departure not selected", Toast.LENGTH_SHORT).show();
         }
 
-        else if (arrival.equals("- ARRIVAL -")) {
+        else if (arrival.equals("SELECT ARRIVAL")) {
             Toast.makeText(this, "Arrival not selected", Toast.LENGTH_SHORT).show();
         }
 
@@ -104,12 +83,13 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
         }
     }
 
-    private void setupSpinner() {
 
-        ArrayAdapter spinAdapter1 = ArrayAdapter.createFromResource(this,
+    private void setupSpinners() {
+
+        spinAdapter1 = ArrayAdapter.createFromResource(this,
                 R.array.departure_items, android.R.layout.simple_spinner_item);
 
-        ArrayAdapter spinAdapter2 = ArrayAdapter.createFromResource(this,
+        spinAdapter2 = ArrayAdapter.createFromResource(this,
                 R.array.arrival_items, android.R.layout.simple_spinner_item);
 
         spinAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -141,6 +121,37 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Intent intent;
+
+        switch (item.getItemId())
+        {
+            default: return false;
+
+            case R.id.ferry_companies: {
+                intent = new Intent(this, FerrysPageActivity.class);
+                break;
+            }
+            case R.id.islands:  {
+                intent = new Intent(this, IslandsPageActivity.class);
+                break;
+            }
+            case R.id.info:  {
+                intent = new Intent(this, InfoPageActivity.class);
+                break;
+            }
+        }
+        startActivity(intent);
+        return true;
     }
 }
 

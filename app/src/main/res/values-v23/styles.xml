@@ -11,4 +11,8 @@
         <item name="android:textStyle">bold</item>
 
     </style>
+
+    <style name="ToolbarStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+    </style>
 </resources>
