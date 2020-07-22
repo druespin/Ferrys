@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/tbar"
@@ -12,64 +13,55 @@
         android:layout_height="wrap_content"/>
 
     <ImageView
-        android:id="@+id/logo_img"
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
-        android:contentDescription="@string/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/main_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tbar"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/logo" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:src="@drawable/main_bg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logo_img"
-            android:layout_marginTop="30dp"/>
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        style="@style/SpinnerStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tbar"
+        android:layout_marginTop="150dp"
+        android:entries="@array/departure_items"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        style="@style/SpinnerStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner1"
+        android:layout_marginTop="25dp"
+        android:entries="@array/arrival_items" />
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            style="@style/SpinnerStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logo_img"
-            android:layout_marginTop="50dp"
-            android:entries="@array/departure_items"/>
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            style="@style/SpinnerStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner1"
-            android:layout_marginTop="25dp"
-            android:entries="@array/arrival_items" />
+    <ImageView
+        android:id="@+id/swap_fields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/spinner1"
+        app:layout_constraintTop_toTopOf="@id/spinner1"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_swap_values" />
 
-        <ImageView
-            android:id="@+id/swap_fields"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/spinner1"
-            app:layout_constraintTop_toTopOf="@id/spinner1"
-            android:layout_marginTop="35dp"
-            android:src="@drawable/ic_swap_values" />
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="@string/search"
+        style="@style/SearchButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner2"
+        android:layout_marginTop="100dp"/>
 
-        <Button
-            android:id="@+id/search_btn"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:text="@string/search"
-            style="@style/SearchButtonStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner2"
-            android:layout_marginTop="70dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,16 +8,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.akostikov.app.R;
 
 
-public class IslandsPageActivity extends Activity implements View.OnClickListener,
-                                                            Toolbar.OnMenuItemClickListener{
+public class IslandsPageActivity extends FragmentActivity
+                                implements Toolbar.OnMenuItemClickListener{
 
-    private TextView tv_samui, tv_phangan, tv_tao;
-    private TextView samuiText, phanganText, taoText;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,23 +60,34 @@ public class IslandsPageActivity extends Activity implements View.OnClickListene
         toolbar.setTitle(R.string.islands);
         toolbar.setOnMenuItemClickListener(this);
 
-        tv_samui = findViewById(R.id.tv_samui);
-        tv_phangan = findViewById(R.id.tv_phangan);
-        tv_tao = findViewById(R.id.tv_tao);
+        ViewPager viewPager = findViewById(R.id.island_pager);
+        PagerAdapter pagerAdapter = new IslandPagerAdapter(getSupportFragmentManager(),
+                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.setCurrentItem(0);
 
-        samuiText = findViewById(R.id.samui_text);
-        phanganText = findViewById(R.id.phangan_text);
-        taoText = findViewById(R.id.tao_text);
-
-        tv_samui.setOnClickListener(this);
-        tv_phangan.setOnClickListener(this);
-        tv_tao.setOnClickListener(this);
-
-        samuiText.setOnClickListener(this);
-        phanganText.setOnClickListener(this);
-        taoText.setOnClickListener(this);
     }
 
+    class IslandPagerAdapter extends FragmentStatePagerAdapter {
+
+        IslandPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return new IslandPagerFragment(position);
+        }
+    }
+
+
+  /*
     @Override
     public void onClick(View v) {
         String island = null;
@@ -116,6 +132,7 @@ public class IslandsPageActivity extends Activity implements View.OnClickListene
         } else {
             tv.setMaxLines(3);
         }
-
     }
+
+   */
 }

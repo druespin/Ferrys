@@ -1,18 +1,24 @@
 package com.akostikov.app.menu_pages;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import com.akostikov.app.R;
 
-public class FerrysPageActivity extends Activity implements View.OnClickListener,
-                                                            Toolbar.OnMenuItemClickListener{
+public class FerrysPageActivity extends FragmentActivity implements // View.OnClickListener,
+                                                            Toolbar.OnMenuItemClickListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +30,11 @@ public class FerrysPageActivity extends Activity implements View.OnClickListener
         toolbar.setTitle(R.string.ferry_companies);
         toolbar.setOnMenuItemClickListener(this);
 
-        ImageView rajaLogo = findViewById(R.id.raja_logo);
-        ImageView lomprayahLogo = findViewById(R.id.lomprayah_logo);
-        ImageView seatranLogo = findViewById(R.id.seatran_logo);
-        ImageView songsermLogo = findViewById(R.id.songserm_logo);
-        ImageView haadrinLogo = findViewById(R.id.haadrin_logo);
-
-        rajaLogo.setOnClickListener(this);
-        lomprayahLogo.setOnClickListener(this);
-        seatranLogo.setOnClickListener(this);
-        songsermLogo.setOnClickListener(this);
-        haadrinLogo.setOnClickListener(this);
+        ViewPager viewPager = findViewById(R.id.ferry_pager);
+        PagerAdapter pagerAdapter = new FerryPagerAdapter(getSupportFragmentManager(),
+                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.setCurrentItem(0);
     }
 
     @Override
@@ -63,6 +63,26 @@ public class FerrysPageActivity extends Activity implements View.OnClickListener
         return true;
     }
 
+    class FerryPagerAdapter extends FragmentStatePagerAdapter {
+
+        FerryPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        @Override
+        public int getCount() {
+            return 5;
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return new FerryPagerFragment(position);
+        }
+
+    }
+
+/*
 
     @Override
     public void onClick(View v) {
@@ -98,6 +118,8 @@ public class FerrysPageActivity extends Activity implements View.OnClickListener
             startActivity(intent);
         }
     }
+
+ */
 
 }
 

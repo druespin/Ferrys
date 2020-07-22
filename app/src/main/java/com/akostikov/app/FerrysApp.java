@@ -49,7 +49,6 @@ public class FerrysApp extends Application {
         executor.submit(() -> {
             for (String[][] table : InitialTableData.getTables()) {
                 db.itemDao().insertItems(getRoomItemFromTable(table));
-                Log.d("DATABASE: ", db.itemDao().toString());
             }
         });
         executor.shutdown();

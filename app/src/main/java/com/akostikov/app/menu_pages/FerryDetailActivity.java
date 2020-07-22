@@ -40,7 +40,7 @@ public class FerryDetailActivity extends Activity implements Toolbar.OnMenuItemC
                 break;
             }
             case "seatran": {
-                ferryImage.setImageResource(R.drawable.seatran_foro);
+                ferryImage.setImageResource(R.drawable.seatran_foto);
                 ferryText.setText(R.string.seatran_text);
                 break;
             }

@@ -2,13 +2,13 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:title="@string/ferry_title"
         app:title="@string/ferry_title"
         app:titleTextColor="@color/white"

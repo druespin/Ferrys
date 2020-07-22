@@ -1,10 +1,8 @@
 package com.akostikov.app.main_view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.akostikov.app.R;
 import com.akostikov.app.menu_pages.FerrysPageActivity;
@@ -24,11 +24,15 @@ import com.akostikov.app.menu_pages.IslandsPageActivity;
 import com.akostikov.app.results_view.ResultsActivity;
 
 
-public class MainActivity extends Activity implements Toolbar.OnMenuItemClickListener {
+public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItemClickListener {
+
+    private static final int PAGES_NUMBER = 5;
 
     private String departure, arrival;
     private Spinner spin1, spin2;
     private ArrayAdapter spinAdapter1, spinAdapter2;
+    private PagerAdapter pagerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
         toolbar.setOnMenuItemClickListener(this);
+
+
 
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
@@ -153,6 +159,6 @@ public class MainActivity extends Activity implements Toolbar.OnMenuItemClickLis
         startActivity(intent);
         return true;
     }
-}
 
+}
 
