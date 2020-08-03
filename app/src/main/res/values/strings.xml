@@ -69,7 +69,7 @@
 The island is well known for scuba diving and snorkeling, as well as hiking, rock climbing, and bouldering. The most popular place for tourists is Sairee on the west coast, which has a white sandy beach of 1.7 km interrupted only by a few huge boulders and a scattering of medium budget resorts and restaurants. Chalok Baan Khao, to the south of the island, is becoming increasingly popular as an alternative for those wishing to escape the crowds. A great many granite boulders, both in the forests and on the beaches of Ko Tao, attract a growing number of climbers.</string>
 
     <!--Info page values-->
-    <string name="about_title">About this App</string>
+    <string name="about_title">About</string>
 
     <string name="about_text_1">The application code is available on Github:</string>
     <string name="github_link">https://github.com/druespin/Ferrys</string>

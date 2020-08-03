@@ -70,10 +70,6 @@ public class FerryDetailActivity extends Activity implements Toolbar.OnMenuItemC
 
             default: return super.onOptionsItemSelected(item);
 
-            case R.id.info: {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
             case R.id.islands: {
                 intent = new Intent(this, IslandsPageActivity.class);
                 break;

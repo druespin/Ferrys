@@ -32,19 +32,9 @@ public class IslandsPageActivity extends FragmentActivity
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId())
-        {
-            default: return super.onOptionsItemSelected(item);
-
-            case R.id.ferry_companies: {
-                intent = new Intent(this, FerrysPageActivity.class);
-                break;
-            }
-            case R.id.info:  {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
+        Intent intent = new Intent();
+        if (item.getItemId() == R.id.ferry_companies) {
+            intent = new Intent(this, FerrysPageActivity.class);
         }
         startActivity(intent);
         return true;

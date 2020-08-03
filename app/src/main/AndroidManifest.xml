@@ -63,11 +63,6 @@
             android:parentActivityName="com.akostikov.app.menu_pages.IslandsPageActivity">
         </activity>
 
-        <activity
-            android:name="com.akostikov.app.menu_pages.InfoPageActivity"
-            android:parentActivityName="com.akostikov.app.main_view.MainActivity"
-            android:label="@string/about_title">
-        </activity>
     </application>
 
 </manifest>

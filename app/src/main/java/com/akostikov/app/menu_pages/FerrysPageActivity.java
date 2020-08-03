@@ -45,19 +45,10 @@ public class FerrysPageActivity extends FragmentActivity implements // View.OnCl
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        Intent intent;
+        Intent intent = new Intent();
 
-        switch (item.getItemId()) {
-            default: return super.onOptionsItemSelected(item);
-
-            case R.id.info: {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
-            case R.id.islands: {
-                intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
+        if (item.getItemId() == R.id.islands) {
+            intent = new Intent(this, IslandsPageActivity.class);
         }
         startActivity(intent);
         return true;

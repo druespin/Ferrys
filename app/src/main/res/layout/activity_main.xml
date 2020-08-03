@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/tbar"
@@ -62,6 +62,15 @@
         app:layout_constraintTop_toBottomOf="@id/spinner2"
         android:layout_marginTop="100dp"/>
 
+    <ImageView
+        android:id="@+id/github_link"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_github"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

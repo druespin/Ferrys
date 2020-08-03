@@ -34,10 +34,6 @@ public class MapPageActivity extends Activity implements Toolbar.OnMenuItemClick
                 intent = new Intent(this, IslandsPageActivity.class);
                 break;
             }
-            case R.id.info:  {
-                intent = new Intent(this, InfoPageActivity.class);
-                break;
-            }
         }
         startActivity(intent);
         return true;

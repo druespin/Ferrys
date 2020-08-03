@@ -24,14 +24,15 @@
                 android:id="@+id/island_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Display1"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:padding="12dp"
                 tools:text="Don Sak"/>
 
             <TextView
                 android:id="@+id/island_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                style="@style/TextAppearance.AppCompat.Small"
                 android:padding="12dp"
                 tools:text="TEXT text"/>
 

@@ -9,7 +9,6 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:title="@string/ferry_title"
         app:title="@string/ferry_title"
         app:titleTextColor="@color/white"
         android:background="@color/colorPrimary"

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.akostikov.app.R;
 import com.akostikov.app.database.RoomItem;
 import com.akostikov.app.menu_pages.FerrysPageActivity;
-import com.akostikov.app.menu_pages.InfoPageActivity;
 import com.akostikov.app.menu_pages.IslandsPageActivity;
 
 import java.util.List;
@@ -81,10 +80,6 @@ public class ResultsActivity extends Activity implements Toolbar.OnMenuItemClick
             }
             case R.id.islands:  {
                 intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
-            case R.id.info:  {
-                intent = new Intent(this, InfoPageActivity.class);
                 break;
             }
         }
