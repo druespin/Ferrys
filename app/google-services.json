@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "203784663747",
+    "firebase_url": "https://ferrys-db.firebaseio.com",
+    "project_id": "ferrys-db",
+    "storage_bucket": "ferrys-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203784663747:android:1738efc0bf0d5ab02ae876",
+        "android_client_info": {
+          "package_name": "com.akostikov.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203784663747-kairjq3fdlt4crmum7dfshcgn10h7vs5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4CLgbYmCqblLXtdtcjR2M4-a6Us_y8EY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203784663747-kairjq3fdlt4crmum7dfshcgn10h7vs5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

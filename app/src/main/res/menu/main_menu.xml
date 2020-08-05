@@ -3,22 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/ferry_companies"
+        android:id="@+id/swap_direction"
         android:orderInCategory="100"
-        android:title="@string/ferry_companies"
-        app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/islands"
-        android:orderInCategory="100"
-        android:title="@string/islands"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/info"
-        android:menuCategory="container"
-        android:orderInCategory="100"
-        android:title="@string/info"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_swap"
+        app:showAsAction="always"
+        android:title="@string/swap_dep_arr" />
 
 </menu>
