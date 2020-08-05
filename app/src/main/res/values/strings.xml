@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Ferrys</string>
+    <string name="app_name">Siam Ferrys</string>
 
     <string-array name="departure_items">
-        <item>- DEPARTURE -</item>
+        <item>SELECT DEPARTURE</item>
         <item>Don Sak</item>
         <item>Ko Samui</item>
         <item>Ko Phangan</item>
@@ -10,7 +10,7 @@
     </string-array>
 
     <string-array name="arrival_items">
-        <item>- ARRIVAL -</item>
+        <item>SELECT ARRIVAL</item>
         <item>Don Sak</item>
         <item>Ko Samui</item>
         <item>Ko Phangan</item>
@@ -25,7 +25,7 @@
 
     <string name="search">SEARCH</string>
 
-    <string name="ferrytime">FERRYS</string>
+    <string name="ferry_title">SIAM FERRYS</string>
 
     <!-- Menu values -->
     <string name="ferry_companies">Ferries</string>
@@ -69,7 +69,7 @@
 The island is well known for scuba diving and snorkeling, as well as hiking, rock climbing, and bouldering. The most popular place for tourists is Sairee on the west coast, which has a white sandy beach of 1.7 km interrupted only by a few huge boulders and a scattering of medium budget resorts and restaurants. Chalok Baan Khao, to the south of the island, is becoming increasingly popular as an alternative for those wishing to escape the crowds. A great many granite boulders, both in the forests and on the beaches of Ko Tao, attract a growing number of climbers.</string>
 
     <!--Info page values-->
-    <string name="about_title">About this App</string>
+    <string name="about_title">About</string>
 
     <string name="about_text_1">The application code is available on Github:</string>
     <string name="github_link">https://github.com/druespin/Ferrys</string>
@@ -81,5 +81,9 @@ The island is well known for scuba diving and snorkeling, as well as hiking, roc
 
 
     <string name="map">Map</string>
+    <string name="empty">empty</string>
+    <string name="app_logo">app_logo</string>
+    <string name="routes">Routes</string>
+    <string name="swap_dep_arr">swap_dep_arr</string>
 
 </resources>

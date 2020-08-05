@@ -1,68 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/ToolbarStyle"
-        android:textAlignment="textStart"
-        android:title="@string/ferrytime"
-        android:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:visibility="visible" />
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:src="@drawable/main_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:src="@drawable/logo" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/ship"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_ship"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
 
-    <!--suppress AndroidDomInspection -->
-    <LinearLayout
-        android:id="@+id/main_screen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_img"
-        android:orientation="vertical"
-        android:showDividers="middle">
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        style="@style/SpinnerStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ship"
+        android:layout_marginTop="30dp"
+        android:entries="@array/departure_items"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        style="@style/SpinnerStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner1"
+        android:layout_marginTop="25dp"
+        android:entries="@array/arrival_items" />
 
-        <Spinner
-            android:id="@+id/spinner1"
-            style="@style/SpinnerStyle"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:entries="@array/departure_items" />
+    <ImageView
+        android:id="@+id/swap_fields"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_swap"
+        app:layout_constraintStart_toEndOf="@id/spinner1"
+        app:layout_constraintTop_toTopOf="@id/spinner1" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            style="@style/SpinnerStyle"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:entries="@array/arrival_items" />
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="@string/search"
+        style="@style/SearchButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner2"
+        android:layout_marginTop="50dp"/>
 
-        <Button
-            android:id="@+id/search"
-            style="@style/SearchButtonStyle"
-            android:layout_width="200dp"
-            android:layout_height="65dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:text="@string/search" />
+    <ImageView
+        android:id="@+id/islands_link"
+        android:layout_width="53dp"
+        android:layout_height="49dp"
+        android:src="@drawable/ic_island"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/ferrys_link"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_ship_2"
+        app:layout_constraintEnd_toStartOf="@+id/islands_link"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/github_link"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_github"
+        app:layout_constraintStart_toEndOf="@+id/islands_link"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
