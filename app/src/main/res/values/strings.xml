@@ -84,5 +84,6 @@ The island is well known for scuba diving and snorkeling, as well as hiking, roc
     <string name="empty">empty</string>
     <string name="app_logo">app_logo</string>
     <string name="routes">Routes</string>
+    <string name="swap_dep_arr">swap_dep_arr</string>
 
 </resources>

@@ -1,12 +1,8 @@
-package com.akostikov.app.menu_pages;
+package com.akostikov.app.ferrys;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -16,19 +12,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.akostikov.app.R;
 
-public class FerrysPageActivity extends FragmentActivity implements // View.OnClickListener,
-                                                            Toolbar.OnMenuItemClickListener
-{
+public class FerrysPageActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ferrys_page);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.menu_for_ferrys_page);
-        toolbar.setTitle(R.string.ferry_companies);
-        toolbar.setOnMenuItemClickListener(this);
 
         ViewPager viewPager = findViewById(R.id.ferry_pager);
         PagerAdapter pagerAdapter = new FerryPagerAdapter(getSupportFragmentManager(),
@@ -37,24 +26,8 @@ public class FerrysPageActivity extends FragmentActivity implements // View.OnCl
         viewPager.setCurrentItem(0);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_for_ferrys_page, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        Intent intent = new Intent();
-
-        if (item.getItemId() == R.id.islands) {
-            intent = new Intent(this, IslandsPageActivity.class);
-        }
-        startActivity(intent);
-        return true;
-    }
-
-    class FerryPagerAdapter extends FragmentStatePagerAdapter {
+    static class FerryPagerAdapter extends FragmentStatePagerAdapter {
 
         FerryPagerAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);

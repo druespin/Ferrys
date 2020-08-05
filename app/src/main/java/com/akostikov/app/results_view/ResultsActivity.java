@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.akostikov.app.R;
 import com.akostikov.app.database.RoomItem;
-import com.akostikov.app.menu_pages.FerrysPageActivity;
-import com.akostikov.app.menu_pages.IslandsPageActivity;
+import com.akostikov.app.ferrys.FerrysPageActivity;
+import com.akostikov.app.islands.IslandsPageActivity;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -23,14 +23,15 @@ import java.util.concurrent.ExecutionException;
 public class ResultsActivity extends Activity implements Toolbar.OnMenuItemClickListener {
 
     private RecyclerView recyclerView;
-    private DataAdapter adapter;
+    private Toolbar toolbar;
+    private String departure, arrival;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_results);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
         toolbar.setOnMenuItemClickListener(this);
 
@@ -40,22 +41,12 @@ public class ResultsActivity extends Activity implements Toolbar.OnMenuItemClick
         // Get departure and arrival from intent
         Bundle args = getIntent().getExtras();
         if (args != null) {
-            String departure = args.getString("dep");
-            String arrival = args.getString("arr");
+            departure = args.getString("dep");
+            arrival = args.getString("arr");
 
-            toolbar.setTitle(departure + " - " + arrival);
-
-            // Get data from DB
-            try {
-                final ResultsRepo repo = new ResultsRepo(departure, arrival);
-                final List<RoomItem> items = repo.getItems();
-
-                if (!items.isEmpty()) {
-                    adapter = new DataAdapter(items);
-                    recyclerView.setAdapter(adapter);
-                }
-            } catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
+            if (departure != null && arrival != null) {
+                toolbar.setTitle(departure + " - " + arrival);
+                getItemsAndShowResults(departure, arrival);
             }
         }
     }
@@ -68,23 +59,30 @@ public class ResultsActivity extends Activity implements Toolbar.OnMenuItemClick
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        Intent intent;
 
-        switch (item.getItemId())
-        {
-            default: return super.onOptionsItemSelected(item);
-
-            case R.id.ferry_companies: {
-                intent = new Intent(this, FerrysPageActivity.class);
-                break;
-            }
-            case R.id.islands:  {
-                intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
+        if (item.getItemId() == R.id.swap_direction) {
+            final String swap = departure;
+            departure = arrival;
+            arrival = swap;
+            toolbar.setTitle(departure + " - " + arrival);
+            getItemsAndShowResults(departure, arrival);
         }
-        startActivity(intent);
         return true;
+    }
+
+    private void getItemsAndShowResults(String departure, String arrival) {
+
+        try {
+            final ResultsRepo repo = new ResultsRepo(departure, arrival);
+            final List<RoomItem> items = repo.getItems();
+
+            if (!items.isEmpty()) {
+                DataAdapter adapter = new DataAdapter(items);
+                recyclerView.setAdapter(adapter);
+            }
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -8,8 +8,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.PersistableBundle;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,17 +19,16 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.fragment.app.FragmentActivity;
 
 import com.akostikov.app.R;
-import com.akostikov.app.menu_pages.FerrysPageActivity;
-import com.akostikov.app.menu_pages.IslandsPageActivity;
+import com.akostikov.app.ferrys.FerrysPageActivity;
+import com.akostikov.app.islands.IslandsPageActivity;
 import com.akostikov.app.results_view.ResultsActivity;
 
 
-public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItemClickListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
 
     private static final String GITHUB_LINK_TEXT = "https://github.com/druespin/Ferrys";
     private String departure, arrival;
@@ -40,46 +39,81 @@ public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.main_menu);
-        toolbar.setOnMenuItemClickListener(this);
-
         spin1 = findViewById(R.id.spinner1);
         spin2 = findViewById(R.id.spinner2);
-        ImageView swapFields = findViewById(R.id.swap_fields);
-        Button btnSearch = findViewById(R.id.search_btn);
 
-        ImageView githubLink = findViewById(R.id.github_link);
-        if (githubLink != null) {
-            registerForContextMenu(githubLink);
+        if (savedInstanceState != null) {
+            spin1.setSelection(savedInstanceState.getInt("departure"));
+            spin2.setSelection(savedInstanceState.getInt("arrival"));
         }
 
-//        githubLink.setOnClickListener(v -> openLinkInChrome());
-//        githubLink.setOnLongClickListener(v -> false);
+        ImageView ferrysLink = findViewById(R.id.ferrys_link);
+        ImageView islandsLink = findViewById(R.id.islands_link);
+        ImageView githubLink = findViewById(R.id.github_link);
+        ImageView swapFields = findViewById(R.id.swap_fields);
+        Button searchBtn = findViewById(R.id.search_btn);
+
+        ferrysLink.setOnClickListener(this);
+        islandsLink.setOnClickListener(this);
+        githubLink.setOnClickListener(this);
+        swapFields.setOnClickListener(this);
+        searchBtn.setOnClickListener(this);
 
         setupSpinners();
-
-        swapFields.setOnClickListener(v -> {
-            if (departure != null && arrival != null) {
-                int swap = spin1.getSelectedItemPosition();
-                spin1.setSelection(spin2.getSelectedItemPosition());
-                spin2.setSelection(swap);
-            }
-        });
-
-        btnSearch.setOnClickListener(v -> {
-            setupSpinners();
-            doSearch(departure, arrival);
-        });
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putInt("departure", spin1.getSelectedItemPosition());
+        outState.putInt("arrival", spin2.getSelectedItemPosition());
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId())
+        {
+            case R.id.ferrys_link: {
+                startActivity(new Intent(this, FerrysPageActivity.class));
+                break;
+            }
+            case R.id.islands_link:  {
+                startActivity(new Intent(this, IslandsPageActivity.class));
+                break;
+            }
+            case R.id.github_link: {
+                openLinkInChrome();
+                break;
+            }
+            case R.id.search_btn: {
+                if (departure != null && arrival != null) {
+                    doSearch(departure, arrival);
+                }
+                break;
+            }
+            case R.id.swap_fields: {
+                if (spin1.getSelectedItem().equals("SELECT DEPARTURE") ||
+                        spin2.getSelectedItem().equals("SELECT ARRIVAL")) {
+                    Toast.makeText(this, "Departure and Arrival should be selected",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    int swap = spin1.getSelectedItemPosition();
+                    spin1.setSelection(spin2.getSelectedItemPosition());
+                    spin2.setSelection(swap);
+                }
+                break;
+            }
+        }
+    }
 
     private void doSearch(String departure, String arrival) {
 
-        if (departure.equals("SELECT DEPARTURE")) {
+        if (departure.contains("DEPARTURE")) {
             Toast.makeText(this, "Departure not selected", Toast.LENGTH_SHORT).show();
         }
-        else if (arrival.equals("SELECT ARRIVAL")) {
+        else if (arrival.contains("ARRIVAL")) {
             Toast.makeText(this, "Arrival not selected", Toast.LENGTH_SHORT).show();
         }
         else if (departure.equals(arrival))  {
@@ -94,6 +128,12 @@ public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItem
         }
     }
 
+    private void openLinkInChrome() {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        builder.setToolbarColor(Color.BLACK);
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(this, Uri.parse(GITHUB_LINK_TEXT));
+    }
 
     private void setupSpinners() {
 
@@ -134,40 +174,6 @@ public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItem
         });
     }
 
-    void openLinkInChrome() {
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-        builder.setToolbarColor(Color.BLACK);
-        CustomTabsIntent customTabsIntent = builder.build();
-        customTabsIntent.launchUrl(this, Uri.parse(GITHUB_LINK_TEXT));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        Intent intent;
-
-        switch (item.getItemId())
-        {
-            default: return false;
-
-            case R.id.ferry_companies: {
-                intent = new Intent(this, FerrysPageActivity.class);
-                break;
-            }
-            case R.id.islands:  {
-                intent = new Intent(this, IslandsPageActivity.class);
-                break;
-            }
-        }
-        startActivity(intent);
-        return true;
-    }
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
@@ -192,6 +198,5 @@ public class MainActivity extends FragmentActivity implements Toolbar.OnMenuItem
                 return super.onContextItemSelected(item);
         }
     }
-
 }
 

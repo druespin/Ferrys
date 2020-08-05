@@ -44,7 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestUtil 'androidx.test:orchestrator:1.2.0'
 
-    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta8"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-rc1"
 
     def recycler_version = "1.1.0"
     implementation "androidx.recyclerview:recyclerview:$recycler_version"

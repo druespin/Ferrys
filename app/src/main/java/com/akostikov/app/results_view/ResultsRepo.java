@@ -11,9 +11,9 @@ import java.util.concurrent.Executors;
 
 class ResultsRepo {
 
-    private FerrysDb db;
     private String departure;
     private String arrival;
+    private FerrysDb db;
     private ExecutorService executor;
 
     ResultsRepo(String departure, String arrival) {

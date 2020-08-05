@@ -1,4 +1,4 @@
-package com.akostikov.app.menu_pages;
+package com.akostikov.app.ferrys;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
